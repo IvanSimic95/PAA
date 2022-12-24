@@ -36,6 +36,10 @@ $galert = "Your Orders have been Created!";
       <p class="mb-0 flex-1">Your order is now paid for & you will receive an email with your order details and dashboard login link. Your order will be delivered to your email!</p>
       </div>
 
+      <div class="alert alert-info border-2 d-flex align-items-center mt-2" role="alert">
+      <p class="mb-0 flex-1">If you need help contact us at contact@psychic-artist.com</p>
+      </div>
+
       <div class="alert alert-warning border-2 d-flex align-items-center mt-2" role="alert">
       <p class="mb-0 flex-1">Please note that your Purchase Will Be Reflected as "ClickBank or "CLKBANK*COM"</p>
       </div>
