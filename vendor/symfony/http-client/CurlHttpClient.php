@@ -67,7 +67,7 @@ final class CurlHttpClient implements HttpClientInterface, LoggerAwareInterface,
 
         $this->defaultOptions['buffer'] ??= self::shouldBuffer(...$defaultOptions);
 
-        if ($defaultOptions) {
+        if ($defaultOptions) { 
             [, $this->defaultOptions] = self::prepareRequest(null, null, $defaultOptions, $this->defaultOptions);
         }
 
