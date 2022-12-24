@@ -1,0 +1,14 @@
+{
+    "require": {
+        "felixfbecker/language-server": "*",
+        "firephp/firephp-core": "^0.5.3",
+        "mailgun/mailgun-php": "^3.5",
+        "mrclay/minify": "~3.0.0",
+        "nyholm/psr7": "^1.5",
+        "pusher/pusher-php-server": "^7.0",
+        "symfony/http-client": "^6.2",
+        "theiconic/name-parser": "^1.2"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable" : true
+}
