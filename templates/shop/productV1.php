@@ -608,6 +608,11 @@ Testimonials, case studies, and examples found on this page are results that hav
         
     </section>
 </div>
+<style>
+.old_price del, .price-side, #contactpopuptopbar{
+    display:none;
+}
+    </style>
 <?php  
 
 include $_SERVER['DOCUMENT_ROOT'].'/templates/navbar/phone-navbar.php';

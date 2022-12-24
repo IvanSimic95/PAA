@@ -33,7 +33,7 @@ $galert = "Your Orders have been Created!";
                   <div class="card-body col-12 offset-0 col-xl-10 offset-xl-1 mt-0" style="text-align:center; min-height:25vh;">
 
       <div class="alert alert-success border-2 d-flex align-items-center mt-2" role="alert">
-      <p class="mb-0 flex-1">Your order is now paid for & you will receive an email with your order details and dashboard login link.</p>
+      <p class="mb-0 flex-1">Your order is now paid for & you will receive an email with your order details and dashboard login link. Your order will be delivered to your email!</p>
       </div>
 
       <div class="alert alert-warning border-2 d-flex align-items-center mt-2" role="alert">

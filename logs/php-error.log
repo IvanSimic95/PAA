@@ -924,3 +924,13 @@ Stack trace:
 [01-Jul-2022 00:16:49 Europe/Zagreb] PHP Warning:  Undefined array key "subid2" in C:\laragon\www\PA\order-processing\func\start-orders.php on line 42
 [01-Jul-2022 00:17:08 Europe/Zagreb] PHP Warning:  Undefined array key "name" in C:\laragon\www\PA\order-processing\func\complete-orders.php on line 111
 [01-Jul-2022 00:17:08 Europe/Zagreb] PHP Warning:  Undefined array key "name" in C:\laragon\www\PA\order-processing\func\complete-orders.php on line 122
+[24-Dec-2022 19:55:40 Europe/Zagreb] PHP Fatal error:  Uncaught Error: Call to undefined function array_key_first() in C:\laragon\www\PA\templates\config.php:337
+Stack trace:
+#0 C:\laragon\www\PA\index.php(4): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\templates\config.php on line 337
+[24-Dec-2022 19:56:28 Europe/Zagreb] PHP Fatal error:  Uncaught Error: Call to undefined function array_key_first() in C:\laragon\www\PA\templates\config.php:337
+Stack trace:
+#0 C:\laragon\www\PA\index.php(4): include_once()
+#1 {main}
+  thrown in C:\laragon\www\PA\templates\config.php on line 337
