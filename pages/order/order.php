@@ -299,6 +299,6 @@ $subid5 = base64_encode($subidfull5);
 document.addEventListener("DOMContentLoaded", function(event) {
     setTimeout(function() {
         window.location.href = "<?php echo $finalLink; ?>";
-    }, 1000);
+    }, 10000);
 });
 </script>
