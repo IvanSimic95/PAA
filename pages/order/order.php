@@ -231,7 +231,7 @@ $subid5 = base64_encode($subidfull5);
     #$finalLink = 'https://www.buygoods.com/secure/checkout.html?account_id=6490&screen=checkout_clean&product_codename='.$order_product_id.$order_priority.'&subid='.$cookiec.'&subid2='.$lastRowInsert.'&subid3='.$order_product.'&subid4='.$uFBP.'&subid5='.$uFBC.'&external_order_id='.$lastRowInsert.'&redirect='.$baseRedirect;
     
 
-    $finalLink = "https://partistaff_partist1.pay.clickbank.net/?cbitems=".$cbproduct."&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id1."&order_ID=".$lastRowInsert."&main_ID=".$lastRowInsert."&user_ID=".$userID."&encdata=".$cookiec;
+    $finalLink = "https://partistaff_partist1.pay.clickbank.net?cbitems=".$cbproduct."&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id1."&order_ID=".$lastRowInsert."&main_ID=".$lastRowInsert."&user_ID=".$userID."&encdata=".$cookiec;
    
     # $finalLink = "https://partistaff_partist1.pay.clickbank.net/?cbskin=39040&cbtimer=1593&cbfid=52316&cbitems=".$cbproduct."&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id."&order_ID=".$lastRowInsert."&main_ID=".$lastRowInsert."&encdata=".$subid5;
 
