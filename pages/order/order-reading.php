@@ -140,15 +140,19 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
     switch($countReadings){
     case "1":
     $order_price = "19.99";
+    $cbproduct = "5";
     break;
     case "2":
     $order_price = "29.99";
+    $cbproduct = "6";
     break;
     case "3":
     $order_price = "39.99";
+    $cbproduct = "7";
     break;
     case "4":
     $order_price = "49.99";
+    $cbproduct = "8";
     break;
     }
 
@@ -214,8 +218,8 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
 
     $clean_order_product=str_replace(" ","-",$order_product);
 
-    $finalLink = 'https://buygoods.com/secure/upsell?account_id=6490&screen=checkout_clean&product_codename='.$countReadings.'xreadings&subid='.$cookie.'&subid2='.$lastRowInsert.'&subid3='.$clean_order_product.'&subid4='.$userID.'&external_order_id='.$lastRowInsert.'&redirect='.$baseRedirect;
-    $finalLink = "https://partistaff_partist1.pay.clickbank.net/?cbitems=".$cbproduct."&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id1."&order_ID=".$lastRowInsert."&main_ID=".$lastRowInsert."&user_ID=".$userID."&encdata=".$cookiec;
+   # $finalLink = 'https://buygoods.com/secure/upsell?account_id=6490&screen=checkout_clean&product_codename='.$countReadings.'xreadings&subid='.$cookie.'&subid2='.$lastRowInsert.'&subid3='.$clean_order_product.'&subid4='.$userID.'&external_order_id='.$lastRowInsert.'&redirect='.$baseRedirect;
+    $finalLink = "https://partist1.pay.clickbank.net/?cbitems=".$cbproduct."&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id1."&order_ID=".$lastRowInsert."&main_ID=".$lastRowInsert."&user_ID=".$userID."&encdata=".$cookiec;
    
     $_SESSION['orderID']   = $lastRowInsert;
  

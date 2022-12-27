@@ -281,7 +281,7 @@ $subid5 = base64_encode($subidfull5);
                     <div class="card-body p-4 p-sm-5">
                         <div class="fw-bold display-6"><?php echo $titlePage; ?></div>
                         <p class="lead mt-4 text-800 font-sans-serif fw-semi-bold w-md-75 w-xl-100 mx-auto">
-                            <?php echo $finalLink; ?></p>
+                            <?php echo $description; ?></p>
 
 
                         <div class="loadericon"></div>
@@ -299,6 +299,6 @@ $subid5 = base64_encode($subidfull5);
 document.addEventListener("DOMContentLoaded", function(event) {
     setTimeout(function() {
         window.location.href = "<?php echo $finalLink; ?>";
-    }, 10000);
+    }, 1000);
 });
 </script>
