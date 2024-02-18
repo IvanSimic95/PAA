@@ -38,13 +38,6 @@
     <!-- ===============================================-->
     <!--    Preload and preconnect -->
     <!-- ===============================================-->
-    <link rel="preload" href="/min/g=css?v=1204" as="style">
-    <link rel="preload" href="/assets/css/custom.css?v=1204" as="style">
-    <link rel="preload" href="/assets/css/fonts.css?v=1204" as="style">
-
-    <link rel="preload" href="/min/g=js?v=1204" as="script">
-    <link rel="preload" href="/min/g=js2?v=1204" as="script">
-    <link rel="preload" href="/min/g=fa-js?v=1204" as="script">
     <link rel="preload" href="https://polyfill.io/v3/polyfill.min.js?features=window.scroll" as="script">
 
 
