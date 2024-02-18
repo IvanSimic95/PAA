@@ -25,20 +25,6 @@ if(isset($_GET['logout'])){
 
 
 
-$firephp = FirePHP::getInstance(true);
-
-//$firephp->fb('Hello World'); /* Defaults to FirePHP::LOG */
-
-//$firephp->fb('Log message'  ,FirePHP::LOG);
-//$firephp->fb('Info message' ,FirePHP::INFO);
-//$firephp->fb('Warn message' ,FirePHP::WARN);
-//$firephp->fb('Error message',FirePHP::ERROR);
-
-
-
-
-
-
 //START Order Messages
 $processingWelcome = "We are now processing your *Order #%ORDERID%*\n\nYour order will be delivered to your email in %PRIORITY% hours or less.\n\nIf this is your first order your new account will be created automatically\n\nIn order to automatically login to your account just <%EMAILLINK%|Click Here!>\n\n_With Love!_\nPsychic Artist";
 
