@@ -779,7 +779,7 @@ function mb_convert_kana(string $string, string $mode = 'KV', ?string $encoding)
  * @return string A converted version of the string represented in ASCII.
  */
 #[Pure]
-function mb_encode_mimeheader(string $string, ?string $charset, ?string $transfer_encoding, string $newline = "\n", int $indent = 0): string {}
+function mb_encode_mimeheader(string $string, ?string $charset, ?string $transfer_encoding, string $newline = "\r\n", int $indent = 0): string {}
 
 /**
  * Decode string in MIME header field
@@ -923,7 +923,8 @@ function mb_send_mail(string $to, string $subject, string $message, array|string
     'substitute_character' => 'string',
     'strict_detection' => 'string',
 ])]
-function mb_get_info(string $type = 'all'): array|string|int|false {}
+#[LanguageLevelTypeAware(['8.2' => 'array|string|int|false|null'], default: 'array|string|int|false')]
+function mb_get_info(string $type = 'all') {}
 
 /**
  * Check if the string is valid for the specified encoding
@@ -1417,6 +1418,11 @@ function mbereg_search_setpos($position) {}
 function mb_str_split(string $string, int $length = 1, ?string $encoding) {}
 
 /**
+ * @since 8.3
+ */
+function mb_str_pad(string $string, int $length, string $pad_string = " ", int $pad_type = STR_PAD_RIGHT, ?string $encoding = null): string {}
+
+/**
  * @removed 8.0
  */
 define('MB_OVERLOAD_MAIL', 1);
@@ -1455,6 +1461,6 @@ define('MB_CASE_FOLD_SIMPLE', 7);
 /**
  * @since 7.4
  */
-define('MB_ONIGURUMA_VERSION', '6.9.8');
+define('MB_ONIGURUMA_VERSION', '6.9.9');
 
 // End of mbstring v.

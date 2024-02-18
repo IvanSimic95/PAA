@@ -267,7 +267,7 @@ class SoapClient
      */
     public function __construct(
         #[LanguageLevelTypeAware(['8.0' => 'string|null'], default: '')] $wsdl,
-        array $options = null
+        array $options = []
     ) {}
 
     /**
@@ -322,7 +322,12 @@ class SoapClient
      * </p>
      * <p>
      * On error, if the SoapClient object was constructed with the exceptions
-     * option set to <b>FALSE</b>, a SoapFault object will be returned.
+     * option set to <b>FALSE</b>, a SoapFault object will be returned. If this
+     * option is not set, or is set to <b>TRUE</b>, then a SoapFault object will
+     * be thrown as an exception.
+     * @throws SoapFault A SoapFault exception will be thrown if an error occurs
+     * and the SoapClient was constructed with the exceptions option not set, or
+     * set to <b>TRUE</b>.
      * @since 5.0.1
      */
     #[TentativeType]
@@ -457,7 +462,7 @@ class SoapClient
      * @since 5.0.1
      */
     #[TentativeType]
-    public function __setLocation(#[LanguageLevelTypeAware(['8.0' => 'string|null'], default: '')] $location = ''): ?string {}
+    public function __setLocation(#[LanguageLevelTypeAware(['8.0' => 'string|null'], default: '')] $location = null): ?string {}
 
     /**
      * Sets SOAP headers for subsequent calls
@@ -546,9 +551,9 @@ class SoapVar
         #[LanguageLevelTypeAware(["8.0" => 'mixed'], default: '')] $data,
         #[LanguageLevelTypeAware(["7.1" => "int|null"], default: "int")] $encoding,
         #[LanguageLevelTypeAware(["8.0" => "string|null"], default: "string")] $typeName,
-        #[LanguageLevelTypeAware(["8.0" => 'string|null'], default: '')] $typeNamespace = '',
-        #[LanguageLevelTypeAware(["8.0" => 'string|null'], default: '')] $nodeName = '',
-        #[LanguageLevelTypeAware(["8.0" => 'string|null'], default: '')] $nodeNamespace = ''
+        #[LanguageLevelTypeAware(["8.0" => 'string|null'], default: '')] $typeNamespace = null,
+        #[LanguageLevelTypeAware(["8.0" => 'string|null'], default: '')] $nodeName = null,
+        #[LanguageLevelTypeAware(["8.0" => 'string|null'], default: '')] $nodeNamespace = null
     ) {}
 
     /**
@@ -626,7 +631,7 @@ class SoapServer
      */
     public function __construct(
         #[LanguageLevelTypeAware(['8.0' => 'string|null'], default: '')] $wsdl,
-        array $options = null
+        array $options = []
     ) {}
 
     /**
@@ -794,9 +799,9 @@ class SoapServer
     public function fault(
         #[LanguageLevelTypeAware(['8.0' => 'string'], default: '')] $code,
         #[LanguageLevelTypeAware(['8.0' => 'string'], default: '')] $string,
-        #[LanguageLevelTypeAware(['8.0' => 'string'], default: '')] $actor = null,
+        #[LanguageLevelTypeAware(['8.0' => 'string'], default: '')] $actor = '',
         #[LanguageLevelTypeAware(['8.0' => 'mixed'], default: '')] $details = null,
-        #[LanguageLevelTypeAware(['8.0' => 'string'], default: '')] $name = null
+        #[LanguageLevelTypeAware(['8.0' => 'string'], default: '')] $name = ''
     ): void {}
 
     /**
@@ -1049,7 +1054,7 @@ class SoapHeader
     public function __construct(
         #[LanguageLevelTypeAware(['8.0' => 'string'], default: '')] $namespace,
         #[LanguageLevelTypeAware(['8.0' => 'string'], default: '')] $name,
-        #[LanguageLevelTypeAware(['8.0' => 'mixed'], default: '')] $data = null,
+        #[LanguageLevelTypeAware(['8.0' => 'mixed'], default: '')] $data,
         #[LanguageLevelTypeAware(['8.0' => 'bool'], default: '')] $mustUnderstand = false,
         #[LanguageLevelTypeAware(['8.0' => 'string|int|null'], default: '')] $actor = null
     ) {}

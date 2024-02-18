@@ -54,6 +54,9 @@ class StubParser
         foreach (self::$stubs->getClasses() as $class) {
             $class->readMutedProblems($jsonData->classes);
             $class->interfaces = CommonUtils::flattenArray($visitor->combineImplementedInterfaces($class), false);
+            foreach ($class->methods as $method) {
+                $method->templateTypes += $class->templateTypes;
+            }
         }
         foreach (self::$stubs->getFunctions() as $function) {
             $function->readMutedProblems($jsonData->functions);
@@ -70,7 +73,7 @@ class StubParser
      */
     public static function processStubs(NodeVisitorAbstract $visitor, ?CoreStubASTVisitor $coreStubASTVisitor, callable $fileCondition): void
     {
-        $parser = (new ParserFactory())->create(ParserFactory::PREFER_PHP7);
+        $parser = (new ParserFactory())->createForNewestSupportedVersion();
         $nameResolver = new NameResolver(null, ['preserveOriginalNames' => true]);
 
         $stubsIterator =

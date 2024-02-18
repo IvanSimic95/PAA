@@ -382,7 +382,8 @@ function date(string $format, ?int $timestamp) {}
  * </tr>
  * </table>
  * </p>
- * @param int|null $timestamp [optional]
+ * @param int|null $timestamp [optional] Default value: time(). The optional timestamp parameter is an integer Unix timestamp
+ * that defaults to the current local time if a timestamp is not given.
  * @return int|false an integer.
  * <p>
  * As idate always returns an integer and
@@ -400,7 +401,8 @@ function idate(string $format, ?int $timestamp): int|false {}
  * The format of the outputted date string. See the formatting
  * options for the date function.
  * </p>
- * @param int|null $timestamp [optional]
+ * @param int|null $timestamp [optional] Default value: time(). The optional timestamp parameter is an integer Unix timestamp
+ * that defaults to the current local time if a timestamp is not given.
  * @return string|false a formatted date string. If a non-numeric value is used for
  * timestamp, false is returned and an
  * E_WARNING level error is emitted.
@@ -468,8 +470,7 @@ function mktime(
     ?int $month = null,
     ?int $day = null,
     ?int $year = null,
-    #[Deprecated('Use the new timezone handling functions instead', since: '5.3')]
-    #[PhpStormStubsElementAvailable(from: '5.5', to: '5.6')] $is_dst = -1
+    #[Deprecated('Use the new timezone handling functions instead', since: '5.3')] #[PhpStormStubsElementAvailable(from: '5.5', to: '5.6')] int $is_dst = -1
 ): int|false {}
 
 /**
@@ -1344,7 +1345,7 @@ function timezone_offset_get(DateTimeZone $object, DateTimeInterface $datetime) 
  * @return array|false <p>Returns numerically indexed array containing associative array with all transitions on success or FALSE on failure.</p>
  */
 #[Pure(true)]
-function timezone_transitions_get(DateTimeZone $object, int $timestampBegin, int $timestampEnd): array|false {}
+function timezone_transitions_get(DateTimeZone $object, int $timestampBegin = PHP_INT_MIN, int $timestampEnd = PHP_INT_MAX): array|false {}
 
 /**
  * Alias:
@@ -1381,7 +1382,7 @@ function timezone_identifiers_list(int $timezoneGroup = DateTimeZone::ALL, ?stri
  * Alias:
  * {@see DateTimeZone::listAbbreviations}
  * @link https://php.net/manual/en/function.timezone-abbreviations-list.php
- * @return array|false Array on success or <b>FALSE</b> on failure.
+ * @return array<string, list<array{dst: bool, offset: int, timezone_id: string|null}>>|false Array on success or <b>FALSE</b> on failure.
  */
 #[Pure]
 #[LanguageLevelTypeAware(["8.0" => "array"], default: "array|false")]

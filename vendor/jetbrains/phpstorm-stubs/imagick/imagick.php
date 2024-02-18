@@ -1951,7 +1951,7 @@ class Imagick implements Iterator, Countable
      * If legacy is true, the calculations are done with the small rounding bug that existed in Imagick before 3.4.0.<br>
      * If false, the calculations should produce the same results as ImageMagick CLI does.
      * @link https://php.net/manual/en/imagick.scaleimage.php
-     * @param int $cols
+     * @param int $columns
      * @param int $rows
      * @param bool $bestfit [optional] The behavior of the parameter bestfit changed in Imagick 3.0.0. Before this version given dimensions 400x400 an image of dimensions 200x150 would be left untouched. In Imagick 3.0.0 and later the image would be scaled up to size 400x300 as this is the "best fit" for the given dimensions. If bestfit parameter is used both width and height must be given.
      * @param bool $legacy [optional] Added since 3.4.0. Default value FALSE
@@ -1959,7 +1959,7 @@ class Imagick implements Iterator, Countable
      * @throws ImagickException Throws ImagickException on error
      * @since 2.0.0
      */
-    public function scaleImage($cols, $rows, $bestfit = false, $legacy = false) {}
+    public function scaleImage($columns, $rows, $bestfit = false, $legacy = false) {}
 
     /**
      * (PECL imagick 0.9.0-0.9.9)<br/>
@@ -7278,9 +7278,9 @@ class ImagickKernel
      * Create a kernel from a builtin in kernel. See https://www.imagemagick.org/Usage/morphology/#kernel for examples.<br>
      * Currently the 'rotation' symbols are not supported. Example: $diamondKernel = ImagickKernel::fromBuiltIn(\Imagick::KERNEL_DIAMOND, "2");
      * @link https://php.net/manual/en/imagickkernel.frombuiltin.php
-     * @param string $kernelType The type of kernel to build e.g. \Imagick::KERNEL_DIAMOND
+     * @param int $kernelType The type of kernel to build e.g. \Imagick::KERNEL_DIAMOND
      * @param string $kernelString A string that describes the parameters e.g. "4,2.5"
-     * @return void
+     * @return ImagickKernel
      * @since 3.3.0
      */
     public static function fromBuiltin($kernelType, $kernelString) {}

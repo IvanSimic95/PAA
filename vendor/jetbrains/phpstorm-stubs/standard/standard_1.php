@@ -44,7 +44,7 @@ function strtolower(string $string): string {}
  * the beginning of the string. Unlike {@see strrpos()} and {@see strripos()}, the offset cannot be negative.
  * </p>
  * @return int<0,max>|false <p>
- * Returns the position where the needle exists relative to the beginnning of
+ * Returns the position where the needle exists relative to the beginning of
  * the <b>haystack</b> string (independent of search direction
  * or offset).
  * Also note that string positions start at 0, and not 1.
@@ -349,13 +349,15 @@ function stristr(string $haystack, string $needle, bool $before_needle = false):
  * If <b>needle</b> is not a string, it is converted to
  * an integer and applied as the ordinal value of a character.
  * </p>
+ * @param bool $before_needle Since 8.3 If true, strrchr() returns the part of the haystack before the last occurrence
+ * of the needle (excluding the needle).
  * @return string|false <p>
  * This function returns the portion of string, or <b>FALSE</b> if
  * <b>needle</b> is not found.
  * </p>
  */
 #[Pure]
-function strrchr(string $haystack, string $needle): string|false {}
+function strrchr(string $haystack, string $needle, #[PhpStormStubsElementAvailable(from: '8.3')] bool $before_needle = false): string|false {}
 
 /**
  * Randomly shuffles a string
@@ -499,7 +501,7 @@ function strcoll(string $string1, string $string2): int {}
 function money_format(string $format, float $number): ?string {}
 
 /**
- * Return part of a string
+ * Return part of a string or false on failure. For PHP8.0+ only string is returned
  * @link https://php.net/manual/en/function.substr.php
  * @param string $string <p>
  * The input string.
@@ -559,7 +561,6 @@ function money_format(string $format, float $number): ?string {}
  * $rest = substr("abcdef", -3, -1); // returns "de"
  * ?>
  * </pre>
- * @return string|false the extracted part of string or false on failure.
  */
 #[Pure]
 #[LanguageLevelTypeAware(["8.0" => "string"], default: "string|false")]
@@ -768,7 +769,7 @@ function addcslashes(string $string, string $characters): string {}
  * @return string the modified string.
  */
 #[Pure]
-function rtrim(string $string, string $characters = " \t\n\r\0\x0B"): string {}
+function rtrim(string $string, string $characters = " \n\r\t\v\0"): string {}
 
 /**
  * Replace all occurrences of the search string with the replacement string
@@ -895,7 +896,7 @@ function chunk_split(string $string, int $length = 76, string $separator = "\r\n
  * @return string The trimmed string.
  */
 #[Pure]
-function trim(string $string, string $characters = " \t\n\r\0\x0B"): string {}
+function trim(string $string, string $characters = " \n\r\t\v\0"): string {}
 
 /**
  * Strip whitespace (or other characters) from the beginning of a string
@@ -927,7 +928,7 @@ function trim(string $string, string $characters = " \t\n\r\0\x0B"): string {}
  * (0x0B)), a vertical tab.
  */
 #[Pure]
-function ltrim(string $string, string $characters = " \t\n\r\0\x0B"): string {}
+function ltrim(string $string, string $characters = " \n\r\t\v\0"): string {}
 
 /**
  * Strip HTML and PHP tags from a string
@@ -997,7 +998,7 @@ function similar_text(string $string1, string $string2, &$percent): int {}
  */
 #[Pure]
 #[LanguageLevelTypeAware(["8.0" => "string[]"], default: "string[]|false")]
-function explode(string $separator, string $string, int $limit) {}
+function explode(string $separator, string $string, int $limit = PHP_INT_MAX) {}
 
 /**
  * Join array elements with a string

@@ -244,12 +244,12 @@ function debug_zval_dump(
  * to true, print_r will return its output, instead of
  * printing it (which it does by default).
  * </p>
- * @return string|true If given a string, integer or float,
+ * @return string|bool If given a string, integer or float,
  * the value itself will be printed. If given an array, values
  * will be presented in a format that shows keys and elements. Similar
  * notation is used for objects.
  */
-function print_r(mixed $value, bool $return = false): string|true {}
+function print_r(mixed $value, bool $return = false): string|bool {}
 
 /**
  * Returns the amount of memory allocated to PHP
@@ -383,10 +383,7 @@ function highlight_string(string $string, bool $return = false): string|bool {}
  * Otherwise the nanoseconds are returned as integer (64bit platforms) or float (32bit platforms).
  */
 #[Pure(true)]
-function hrtime(
-    #[PhpStormStubsElementAvailable(from: '7.3', to: '7.4')] bool $as_number,
-    #[PhpStormStubsElementAvailable(from: '8.0')] bool $as_number = false
-): array|int|float|false {}
+function hrtime(bool $as_number = false): array|int|float|false {}
 
 /**
  * Return source with stripped comments and whitespace
@@ -606,7 +603,7 @@ function restore_include_path() {}
  * setcookie successfully runs, it will return true.
  * This does not indicate whether the user accepted the cookie.
  */
-function setcookie(string $name, $value = "", $expires_or_options = 0, $path = "", $domain = "", $secure = false, $httponly = false): bool {}
+function setcookie(string $name, string $value = "", int $expires_or_options = 0, string $path = "", string $domain = "", bool $secure = false, bool $httponly = false): bool {}
 
 /**
  * Send a cookie
@@ -629,7 +626,7 @@ function setcookie(string $name, $value = "", $expires_or_options = 0, $path = "
  *                        This does not indicate whether the user accepted the cookie.
  * @since 7.3
  */
-function setcookie(string $name, $value = '', array $options = []): bool {}
+function setcookie(string $name, string $value = '', array $options = []): bool {}
 
 /**
  * Send a cookie without urlencoding the cookie value

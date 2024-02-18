@@ -196,6 +196,7 @@ class DateTimeImmutable implements DateTimeInterface
      * Adds an amount of days, months, years, hours, minutes and seconds
      * @param DateInterval $interval
      * @return static
+     * @link https://secure.php.net/manual/en/datetimeimmutable.add.php
      */
     #[TentativeType]
     public function add(DateInterval $interval): DateTimeImmutable {}
@@ -808,13 +809,13 @@ class DateTimeZone
     public function getTransitions(
         #[PhpStormStubsElementAvailable(from: '5.3', to: '5.6')] $timestampBegin,
         #[PhpStormStubsElementAvailable(from: '5.3', to: '5.6')] $timestampEnd,
-        #[PhpStormStubsElementAvailable(from: '7.0')] #[LanguageLevelTypeAware(['8.0' => 'int'], default: '')] $timestampBegin = null,
-        #[PhpStormStubsElementAvailable(from: '7.0')] #[LanguageLevelTypeAware(['8.0' => 'int'], default: '')] $timestampEnd = null
+        #[PhpStormStubsElementAvailable(from: '7.0')] #[LanguageLevelTypeAware(['8.0' => 'int'], default: '')] $timestampBegin = PHP_INT_MIN,
+        #[PhpStormStubsElementAvailable(from: '7.0')] #[LanguageLevelTypeAware(['8.0' => 'int'], default: '')] $timestampEnd = PHP_INT_MAX
     ): array|false {}
 
     /**
      * Returns associative array containing dst, offset and the timezone name
-     * @return array
+     * @return array<string, list<array{dst: bool, offset: int, timezone_id: string|null}>>
      * @link https://php.net/manual/en/datetimezone.listabbreviations.php
      */
     #[TentativeType]
@@ -1099,4 +1100,54 @@ class DatePeriod implements IteratorAggregate
 
     #[PhpStormStubsElementAvailable(from: '8.2')]
     public function __unserialize(array $data): void {}
+
+    /**
+     * @since 8.3
+     */
+    public static function createFromISO8601String(string $specification, int $options = 0): static {}
 }
+
+/**
+ * @since 8.3
+ */
+class DateError extends Error {}
+
+/**
+ * @since 8.3
+ */
+class DateObjectError extends DateError {}
+
+/**
+ * @since 8.3
+ */
+class DateRangeError extends DateError {}
+
+/**
+ * @since 8.3
+ */
+class DateException extends Exception {}
+
+/**
+ * @since 8.3
+ */
+class DateInvalidTimeZoneException extends DateException {}
+
+/**
+ * @since 8.3
+ */
+class DateInvalidOperationException extends DateException {}
+
+/**
+ * @since 8.3
+ */
+class DateMalformedStringException extends DateException {}
+
+/**
+ * @since 8.3
+ */
+class DateMalformedIntervalStringException extends DateException {}
+
+/**
+ * @since 8.3
+ */
+class DateMalformedPeriodStringException extends DateException {}
