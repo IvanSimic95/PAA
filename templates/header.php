@@ -56,7 +56,13 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="/assets/css/fonts.css?v=1204" rel="stylesheet">
-    <link href="/min/g=css?v=1204" rel="stylesheet">
+    <link href="/assets/css/theme-rtl.min.css" rel="stylesheet">
+    <link href="/assets/css/theme.min.css" rel="stylesheet">
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="/assets/css/menuv3.css" rel="stylesheet">
+    <link href="/assets/css/lazyload.css" rel="stylesheet">
+    <link href="/assets/css/review.css" rel="stylesheet">
     <link href="/assets/css/custom.css?v=1204" rel="stylesheet">
 
     <!--CUSTOMCSS-->
