@@ -84,9 +84,9 @@ if($domain == "paa.test"){
   $base_url = "https://paa.test";
 }else{
 	$servername = "localhost";
-	$username = "psychic_newpanel";
+	$username = "psychicartist_user";
 	$password = "Jepang123Iva";
-	$db = "psychic_newpanel";
+	$db = "psychicartist_db";
   $base_url = "https://psychic-artist.com";
 }
 
