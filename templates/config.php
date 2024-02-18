@@ -76,12 +76,12 @@ $mgkey = $mg1.$mg2.$mg3;
 
 //Check if server is localhost or guru and save DB info
 $domain = $_SERVER['SERVER_NAME'];
-if($domain == "pa.test"){
+if($domain == "paa.test"){
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
 	$db = "pa";
-  $base_url = "https://pa.test";
+  $base_url = "https://paa.test";
 }else{
 	$servername = "localhost";
 	$username = "psychic_newpanel";
