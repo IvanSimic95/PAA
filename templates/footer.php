@@ -92,16 +92,6 @@
 
 
 
-    <!-- ===============================================-->
-    <!--   Elfsight jQuery Plugins -->
-    <!-- ===============================================-->
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-
-    <!--  Visitor Stats Widget -->
-    <!--<div class="elfsight-app-e5581c30-8361-43d6-9323-37dd59142295"></div>-->
-
-  
-
 
     <!-- ===============================================-->
     <!--   Custom Page JavaScripts & CSS -->
