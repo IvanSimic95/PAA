@@ -38,13 +38,6 @@
     <!-- ===============================================-->
     <!--    Preload and preconnect -->
     <!-- ===============================================-->
-    <link rel="preload" href="/min/g=css?v=1204" as="style">
-    <link rel="preload" href="/assets/css/custom.css?v=1204" as="style">
-    <link rel="preload" href="/assets/css/fonts.css?v=1204" as="style">
-
-    <link rel="preload" href="/min/g=js?v=1204" as="script">
-    <link rel="preload" href="/min/g=js2?v=1204" as="script">
-    <link rel="preload" href="/min/g=fa-js?v=1204" as="script">
     <link rel="preload" href="https://polyfill.io/v3/polyfill.min.js?features=window.scroll" as="script">
 
 
@@ -56,7 +49,13 @@
     <!--    Stylesheets-->
     <!-- ===============================================-->
     <link href="/assets/css/fonts.css?v=1204" rel="stylesheet">
-    <link href="/min/g=css?v=1204" rel="stylesheet">
+    <link href="/assets/css/theme-rtl.min.css" rel="stylesheet">
+    <link href="/assets/css/theme.min.css" rel="stylesheet">
+    <link href="/assets/css/animate.css" rel="stylesheet">
+    <link href="/vendors/overlayscrollbars/OverlayScrollbars.min.css" rel="stylesheet">
+    <link href="/assets/css/menuv3.css" rel="stylesheet">
+    <link href="/assets/css/lazyload.css" rel="stylesheet">
+    <link href="/assets/css/review.css" rel="stylesheet">
     <link href="/assets/css/custom.css?v=1204" rel="stylesheet">
 
     <!--CUSTOMCSS-->
@@ -68,15 +67,7 @@
     <!-- ===============================================-->
     <!--FBMETATAGS-->
     
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143014473-9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-143014473-9');
-</script>
 
 <!-- ClickBank Trust Badge -->
 <script src='//cbtb.clickbank.net/?vendor=partist1'></script>

@@ -73,9 +73,21 @@
     <!-- ===============================================-->
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
     <script defer="defer" src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-    <script src="/min/g=js?v=1204"></script>
-    <script defer="defer" src="/min/g=js2?v=1204"></script>
-    <script defer="defer" src="/min/g=fa-js?v=1204"></script>
+    <script src="/assets/js/config.js"></script>
+    <script src="/vendors/popper/popper.min.js"></script> 
+    <script src="/vendors/bootstrap/bootstrap.min.js"></script> 
+    <script src="/vendors/anchorjs/anchor.min.js"></script> 
+    <script src="/vendors/is/is.min.js"></script>
+    <script src="/assets/js/lightslider.js"></script>
+    <script src="/assets/js/infinite-ajax-scroll.min.js"></script>
+    <script defer="defer" src="/vendors/lodash/lodash.min.js"></script>
+    <script defer="defer" src="/vendors/list.js/list.min.js"></script>
+    <script defer="defer" src="/vendors/countup/countUp.umd.js"></script>
+    <script defer="defer" src="/assets/js/lazyload.js"></script>
+    <script defer="defer" src="/assets/js/jquery.mask.js"></script>
+    <script defer="defer" src="/assets/js/brands.min.js"></script>
+    <script defer="defer" src="/assets/js/solid.min.js"></script>
+    <script defer="defer" src="/assets/js/fontawesome.min.js"></script>
     <script defer="defer" src="/assets/js/menuv3.js?v=1204"></script>
 
 
