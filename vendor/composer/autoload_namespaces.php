@@ -6,8 +6,4 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Props\\' => array($vendorDir . '/mrclay/props-dic/src'),
-    'Pimple' => array($vendorDir . '/pimple/pimple/src'),
-    'JsonMapper' => array($vendorDir . '/netresearch/jsonmapper/src'),
-    'JSMin\\' => array($vendorDir . '/mrclay/jsmin-php/src'),
 );
