@@ -67,15 +67,7 @@
     <!-- ===============================================-->
     <!--FBMETATAGS-->
     
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143014473-9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-143014473-9');
-</script>
 
 <!-- ClickBank Trust Badge -->
 <script src='//cbtb.clickbank.net/?vendor=partist1'></script>
