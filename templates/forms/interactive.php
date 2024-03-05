@@ -155,7 +155,11 @@ $customCSS .= '
 <link href="/assets/css/form-interactive.css" rel="stylesheet">
 <link href="/assets/css/lightslider.css" rel="stylesheet">';
 $customJS .= <<<EOT
-<script src="/min/g=interactive?v=1204"></script>
+<script src="/assets/js/type-it.js"></script>
+<script src="/assets/js/progressbar.js"></script>
+<script src="/assets/js/form-interactive.js"></script>
+<script src="/assets/js/verimail.jquery.min.js"></script>
+
 <script>
 
 $(document).ready(function(){

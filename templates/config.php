@@ -66,7 +66,7 @@ if($domain == "paa.test"){
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$db = "pa";
+	$db = "paa";
   $base_url = "https://paa.test";
 }else{
 	$servername = "localhost";
@@ -117,8 +117,11 @@ $pimage = $webLogo;
 
 $pixelActive = 0;
 
-
-$userAgent = $_SERVER['HTTP_USER_AGENT'];
+if(isset($_SERVER['HTTP_USER_AGENT'])){
+  $userAgent = $_SERVER['HTTP_USER_AGENT'];
+}else{
+  $userAgent = "Unkown";
+}
 
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     $userip = $_SERVER['HTTP_CLIENT_IP'];
@@ -191,7 +194,7 @@ if($bCheck0 > 0 OR $bCheck1 > 0)$breadcrumbsDisable = 1;
 
 if(isset($errorPage))$breadcrumbsDisable = 1;
 
-if($domain == "pa.test"){
+if($domain == "paa.test"){
   // testing
   $min_allowDebugFlag = true;
   $min_errorLogger    = true;
@@ -803,5 +806,4 @@ if(isset($splitURL[1])){//If variable is set proceed
 
 
 
-include_once $_SERVER['DOCUMENT_ROOT'].'/templates/js-trigger.php';
 ?>

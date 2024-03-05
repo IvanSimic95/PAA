@@ -582,7 +582,7 @@ $i = 0;
                 </div>
                          
                     </div>
-                    <div class="privacy-message alert alert-info">ClickBank is the retailer of this product. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank’s role as retailer does not constitute an endorsement, approval or review of this product or any claim, statement or opinion used in promotion of this product.
+                    <div style="display:none;" class="privacy-message alert alert-info">ClickBank is the retailer of this product. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank’s role as retailer does not constitute an endorsement, approval or review of this product or any claim, statement or opinion used in promotion of this product.
 
 Statements on this website have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using our products.
 
