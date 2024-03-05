@@ -5,7 +5,7 @@ header("Pragma: no-cache");
 
 include $_SERVER['DOCUMENT_ROOT'].'/order-processing/func/start-orders.php';
 include $_SERVER['DOCUMENT_ROOT'].'/order-processing/func/complete-orders.php';
-include $_SERVER['DOCUMENT_ROOT'].'/order-processing/func/abbandoned-carts.php';
+#include $_SERVER['DOCUMENT_ROOT'].'/order-processing/func/abbandoned-carts.php';
 
 /*
 $ch = curl_init();
