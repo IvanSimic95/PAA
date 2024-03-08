@@ -56,7 +56,6 @@
 <?php
   $page = "overview";
   $r = $_SERVER['REQUEST_URI'];
-  $firephp->fb($r,FirePHP::LOG);
   $superSplitURL = explode('/',$r);
   $superCount = count($superSplitURL);
   if($superCount === 2) $superSplitURL['2'] = "overview";

@@ -9,7 +9,7 @@ $result = $conn->query($sql);
         <div class="bg-holder bg-card" style="background-image:url(/assets/img/icons/spot-illustrations/corner-6.png);"></div>
 
             <div class="card-body d-flex align-items-center p-2">
-                <div class="avatar avatar-4xl d-sm-inline-block"><img class="rounded-circle"  src="https://avatars.dicebear.com/api/adventurer/<?php echo $_SESSION['email']; ?>.svg" alt="" /></div>
+                <div class="avatar avatar-4xl d-sm-inline-block"><img class="rounded-circle"  src="https://api.dicebear.com/7.x/adventurer/svg?seed=<?php echo $_SESSION['email']; ?>" alt="" /></div>
                 <div class="mx-3 mx-sm-4">
                     <p class="h4">Hello <?php echo $_SESSION['fname']; ?></p>
                     <p class="h6">You are logged in as: <?php echo $_SESSION['email']; ?> </p>

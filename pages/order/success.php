@@ -8,7 +8,7 @@ $logArray['1'] = date("d-m-Y H:i:s");
 $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 $logArray['3'] = $_SERVER['REQUEST_URI'];
 //END - Logging Variables ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+$titlePage = "Order Succesful!";
 
 $sPage = $_SESSION['funnel_page'];
 if($path=="/order/success"){

@@ -1,7 +1,7 @@
 <?php return array (
   //Variable used for echo across website >>>>>>> echo $v['p1-url'];
   'web-title' => 'Psychic Artist',
-  'web-description' => 'Test Description',
+  'web-description' => 'Born psychic with an extrasensory perception capable of uniting with your energy and reading the hidden meanings and upcoming events predestined by the Universe. In the process, I will find out a lot about your soulmate, good and bad, his nature, his inner willingness to finally meet you.',
   'web-logo' => '/assets/img/logo-1.png',
   'web-version' => '1.0',
 

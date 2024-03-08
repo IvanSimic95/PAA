@@ -44,3 +44,4 @@ temp
 /public/*
 *.log
 logs/php-error.log
+/logs

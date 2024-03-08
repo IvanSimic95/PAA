@@ -934,3 +934,34 @@ Stack trace:
 #0 C:\laragon\www\PA\index.php(4): include_once()
 #1 {main}
   thrown in C:\laragon\www\PA\templates\config.php on line 337
+[05-Mar-2024 18:45:48 Europe/Zagreb] PHP Warning:  Undefined variable $titlePage in C:\laragon\www\PAA\pages\order\success.php on line 263
+[05-Mar-2024 18:45:48 Europe/Zagreb] PHP Warning:  Undefined variable $finalLink in C:\laragon\www\PAA\pages\order\success.php on line 281
+[06-Mar-2024 15:49:47 Europe/Zagreb] PHP Warning:  Undefined variable $titlePage in C:\laragon\www\PAA\pages\order\success.php on line 263
+[06-Mar-2024 15:49:47 Europe/Zagreb] PHP Warning:  Undefined variable $finalLink in C:\laragon\www\PAA\pages\order\success.php on line 281
+[06-Mar-2024 15:50:14 Europe/Zagreb] PHP Parse error:  syntax error, unexpected variable "$sPage" in C:\laragon\www\PAA\pages\order\success.php on line 13
+[06-Mar-2024 15:50:31 Europe/Zagreb] PHP Warning:  Undefined variable $finalLink in C:\laragon\www\PAA\pages\order\success.php on line 281
+[06-Mar-2024 16:22:29 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PAA\pages\order\complete-info.php on line 143
+[06-Mar-2024 16:22:29 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PAA\pages\order\complete-info.php on line 144
+[06-Mar-2024 16:22:29 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PAA\pages\order\complete-info.php on line 145
+[06-Mar-2024 16:22:29 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PAA\pages\order\complete-info.php on line 146
+[06-Mar-2024 16:22:29 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PAA\pages\order\complete-info.php on line 147
+[06-Mar-2024 16:22:29 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PAA\pages\order\complete-info.php on line 148
+[06-Mar-2024 16:22:29 Europe/Zagreb] PHP Deprecated:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in C:\laragon\www\PAA\pages\order\complete-info.php on line 149
+[06-Mar-2024 16:22:29 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PAA\pages\order\complete-info.php on line 150
+[06-Mar-2024 16:22:29 Europe/Zagreb] PHP Warning:  Trying to access array offset on value of type null in C:\laragon\www\PAA\pages\order\complete-info.php on line 151
+[08-Mar-2024 15:05:14 Europe/Zagreb] PHP Warning:  Undefined variable $firephp in C:\laragon\www\PAA\templates\dashboard\menu.php on line 59
+[08-Mar-2024 15:05:14 Europe/Zagreb] PHP Fatal error:  Uncaught Error: Call to a member function fb() on null in C:\laragon\www\PAA\templates\dashboard\menu.php:59
+Stack trace:
+#0 C:\laragon\www\PAA\pages\dashboard\index.php(20): include()
+#1 C:\laragon\www\PAA\pages\dashboard.php(2): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\PAA\index.php(12): include('C:\\laragon\\www\\...')
+#3 {main}
+  thrown in C:\laragon\www\PAA\templates\dashboard\menu.php on line 59
+[08-Mar-2024 15:06:09 Europe/Zagreb] PHP Fatal error:  Uncaught TypeError: explode(): Argument #2 ($string) must be of type string, array given in C:\laragon\www\PAA\templates\dashboard\menu.php:58
+Stack trace:
+#0 C:\laragon\www\PAA\templates\dashboard\menu.php(58): explode('/', Array)
+#1 C:\laragon\www\PAA\pages\dashboard\index.php(20): include('C:\\laragon\\www\\...')
+#2 C:\laragon\www\PAA\pages\dashboard.php(2): include('C:\\laragon\\www\\...')
+#3 C:\laragon\www\PAA\index.php(12): include('C:\\laragon\\www\\...')
+#4 {main}
+  thrown in C:\laragon\www\PAA\templates\dashboard\menu.php on line 58

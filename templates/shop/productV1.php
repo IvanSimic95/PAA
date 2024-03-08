@@ -245,6 +245,8 @@ else { ?>
 
                        
                                 <hr>
+
+                                <img src="/assets/img/scs.jpg" style="width:100%;">
                                 
                             
 
