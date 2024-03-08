@@ -97,6 +97,23 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
     case "1":
     $order_product = "soulmate";
     $order_product_nice = "Soulmate Drawing & Reading";
+    
+                switch ($order_priority){
+                    case "48":
+                    $cbproduct = "542328";
+                    $order_price = "29.99";
+                    break;
+                
+                    case "24":
+                    $cbproduct = "542789";
+                    $order_price = "39.99";
+                    break;
+                
+                    case "12":
+                    $cbproduct = "542800";
+                    $order_price = "49.99";
+                    break;
+                }
     break;
     
     case "2":
@@ -123,22 +140,6 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
     $fName = $name->getFirstname();
     $lName = $name->getLastname();
 
-switch ($order_priority){
-    case "48":
-      $cbproduct = "1";
-      $order_price = "29.99";
-    break;
-  
-    case "24":
-      $cbproduct = "2";
-      $order_price = "39.99";
-    break;
-  
-    case "12":
-      $cbproduct = "3";
-      $order_price = "49.99";
-    break;
-  }
 
     //Find User Gender
     function findGender($name) {
@@ -232,7 +233,7 @@ $subid5 = base64_encode($subidfull5);
     
 
     $finalLink = "https://partist1.pay.clickbank.net/?cbitems=".$cbproduct."&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id1."&order_ID=".$lastRowInsert."&main_ID=".$lastRowInsert."&user_ID=".$userID."&encdata=".$cookiec;
-   
+    $finalLink = "https://www.checkout-ds24.com/product/".$cbproduct."?custom=".$lastRowInsert."&email=".$user_email."&first_name=".$fName."&last_name=".$lName;
     # $finalLink = "https://partistaff_partist1.pay.clickbank.net/?cbskin=39040&cbtimer=1593&cbfid=52316&cbitems=".$cbproduct."&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id."&order_ID=".$lastRowInsert."&main_ID=".$lastRowInsert."&encdata=".$subid5;
 
 

@@ -11,8 +11,8 @@
           <div class="row">
             <div class="col-lg-4">
               <div data-v-5c7d699b="" class="logo-footer"><?php include $_SERVER['DOCUMENT_ROOT'].'/templates/logo.php'; ?></div>
-              <p class="text-white">For Product Support, please contact the vendor <a style="color:white;" href="https://psychic-artist.com/support/contact">HERE</a>.</p>
-              <p class="text-white">For Order Support, please contact ClickBank <a style="color:white;" href="https://www.clkbank.com/">HERE</a>.</p>
+              <p class="text-white">Born psychic with an extrasensory perception capable of uniting with your energy and reading the hidden meanings and upcoming events predestined by the Universe. In the process, I will find out a lot about your soulmate, good and bad, his nature, his inner willingness to finally meet you.</p>
+            
               
             </div>
             <div class="col ps-lg-6 ps-xl-8">
@@ -52,7 +52,7 @@
           <div class="container py-3">
             <div class="row justify-content-between fs--1">
               <div class="col-12 col-md-6 text-center text-md-start">
-                <p class="mb-0 text-white opacity-85">© 2022 Psychic Artist All Rights Reserved</p>
+                <p class="mb-0 text-white opacity-85">© 2024 Psychic Artist All Rights Reserved</p>
               </div>
               <div class="col-12 col-md-6 text-end d-none	d-sm-none d-md-block">
                 <p class="mb-0 text-white opacity-85">v<?php echo $webVersion; ?></p>
@@ -63,7 +63,9 @@
       </section>
   </footer>     
 
-
+<!-- Begin of Digistore24 Trusted Badge Code -->
+<script type="text/javascript" src="https://www.digistore24.com/trusted-badge/31063/mpVp7uc7yMbIFEe/salespage"></script>
+<!-- End of Digistore24 Trusted Badge Code -->
 
 
 

@@ -965,3 +965,21 @@ Stack trace:
 #3 C:\laragon\www\PAA\index.php(12): include('C:\\laragon\\www\\...')
 #4 {main}
   thrown in C:\laragon\www\PAA\templates\dashboard\menu.php on line 58
+[08-Mar-2024 17:24:43 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect date value: '29-03-1995' for column 'birthday' at row 1 in C:\laragon\www\PAA\pages\order\order.php:209
+Stack trace:
+#0 C:\laragon\www\PAA\pages\order\order.php(209): mysqli->query('INSERT INTO ord...')
+#1 C:\laragon\www\PAA\index.php(12): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PAA\pages\order\order.php on line 209
+[08-Mar-2024 17:24:43 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect date value: '29-03-1995' for column 'birthday' at row 1 in C:\laragon\www\PAA\pages\order\order.php:209
+Stack trace:
+#0 C:\laragon\www\PAA\pages\order\order.php(209): mysqli->query('INSERT INTO ord...')
+#1 C:\laragon\www\PAA\index.php(12): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PAA\pages\order\order.php on line 209
+[08-Mar-2024 19:28:16 Europe/Zagreb] PHP Fatal error:  Uncaught mysqli_sql_exception: Incorrect integer value: '' for column 'affid' at row 1 in C:\laragon\www\PAA\pages\order\order.php:209
+Stack trace:
+#0 C:\laragon\www\PAA\pages\order\order.php(209): mysqli->query('INSERT INTO ord...')
+#1 C:\laragon\www\PAA\index.php(12): include('C:\\laragon\\www\\...')
+#2 {main}
+  thrown in C:\laragon\www\PAA\pages\order\order.php on line 209

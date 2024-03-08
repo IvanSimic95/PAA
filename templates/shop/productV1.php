@@ -22,6 +22,7 @@ $price = $row[8];
 $url = $row[9];
 $button = $row[10];
 $sales = $row[11];
+$digiID = $row[12];
 
 $retailer = $codename."_".$productID;;
 
@@ -626,6 +627,8 @@ $customJSPreload .= '
 ';
 
 $customJS .= '
-
+<script type="text/javascript">
+digistorePromocode( { "product_id": '.$digiID.', "adjust_domain": true } );
+</script>
 ';
 ?>

@@ -54,6 +54,8 @@
     <link href="/assets/css/lazyload.css" rel="stylesheet">
     <link href="/assets/css/review.css" rel="stylesheet">
     <link href="/assets/css/custom.css?v=1204" rel="stylesheet">
+   
+
 
     <!--CUSTOMCSS-->
 
@@ -64,7 +66,7 @@
     <!-- ===============================================-->
     <!--FBMETATAGS-->
     
-
+    <script src="https://www.digistore24-scripts.com/service/digistore.js"></script>
 
 </head>
 

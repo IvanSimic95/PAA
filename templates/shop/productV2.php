@@ -192,7 +192,7 @@ content: '<br> Readings left today';
                        
                        
                         <script src="https://fast.wistia.com/embed/medias/9fyn8lt784.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_9fyn8lt784 videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/9fyn8lt784/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
-                    
+                        <img src="/assets/img/scs.jpg" style="width:100%;">
                         <div class="bg-secondary rounded p-3 mt-2 mb-2 product-stats readings-left clearfix">
                                     <span style="float:left;">
                                     <i class="fas fa-shopping-cart align-middle mb-0 mt-n1 mr-2"></i> Readings left today: </span>
@@ -270,7 +270,7 @@ else { ?>
                                 $r = $_GET['f'];
                                     if($r==1 OR $r==2 OR $r==3){
                                         if($r == 1) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/interactive.php';
-                                        if($r == 2) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/normal-new.php';
+                                        if($r == 2) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/normalv2.php';
                                         if($r == 3) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/progressive.php';
                                     }
                                 }else{
@@ -278,7 +278,7 @@ else { ?>
                                 if(isset($_SESSION['loggedIn'])) $r = 2;
                                     if($r==1 OR $r==2 OR $r==3){
                                         if($r == 1) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/interactive.php';
-                                        if($r == 2) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/normal-new.php';
+                                        if($r == 2) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/normalv2.php';
                                         if($r == 3) include $_SERVER['DOCUMENT_ROOT'] . '/templates/forms/progressive.php';
                                     }
                                 }
@@ -325,7 +325,7 @@ else { ?>
 
 
 
-                                <?php //  include $_SERVER['DOCUMENT_ROOT'].'/templates/badges.php'; ?>
+                                <?php   include $_SERVER['DOCUMENT_ROOT'].'/templates/badges.php'; ?>
                                 <?php //include $_SERVER['DOCUMENT_ROOT'].'/templates/product-discounts.php'; ?>
 
                     </div>
@@ -549,7 +549,7 @@ $i = 0;
                 </div>
                          
                     </div>
-                    <div class="privacy-message alert alert-info">We Respect Your Privacy &amp; Information</div>
+                    <div class="privacy-message alert alert-info">You are fully protected by our 100% Satisfaction-Guaranteee. So for that reason, I'll give you 60 days money back guarantee. If for any reason, or no reason at all, you're not 100% satisfied with what's inside, simply send me an email and I'll refund every penny of your order cost.</div>
         </div>
        
     </div>
