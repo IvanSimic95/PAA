@@ -983,3 +983,19 @@ Stack trace:
 #1 C:\laragon\www\PAA\index.php(12): include('C:\\laragon\\www\\...')
 #2 {main}
   thrown in C:\laragon\www\PAA\pages\order\order.php on line 209
+[10-Mar-2024 20:21:42 Europe/Zagreb] PHP Warning:  Undefined variable $finalLink in C:\laragon\www\PAA\pages\order\order.php on line 302
+[10-Mar-2024 20:33:02 Europe/Zagreb] PHP Warning:  Undefined variable $finalLink in C:\laragon\www\PAA\pages\order\order.php on line 302
+[10-Mar-2024 20:47:31 Europe/Zagreb] PHP Warning:  Undefined variable $cookie_id1 in C:\laragon\www\PAA\pages\order\order.php on line 61
+[10-Mar-2024 20:47:31 Europe/Zagreb] PHP Warning:  Undefined variable $cookie_id2 in C:\laragon\www\PAA\pages\order\order.php on line 61
+[10-Mar-2024 20:47:31 Europe/Zagreb] PHP Warning:  Undefined variable $cookie_id3 in C:\laragon\www\PAA\pages\order\order.php on line 61
+[10-Mar-2024 20:47:31 Europe/Zagreb] PHP Warning:  Undefined variable $finalLink in C:\laragon\www\PAA\pages\order\order.php on line 302
+[10-Mar-2024 22:07:11 Europe/Zagreb] PHP Warning:  Undefined array key "userID" in C:\laragon\www\PAA\templates\config.php on line 386
+[10-Mar-2024 22:07:11 Europe/Zagreb] PHP Warning:  Undefined variable $NotifEClass in C:\laragon\www\PAA\templates\notifications.php on line 129
+[10-Mar-2024 22:07:11 Europe/Zagreb] PHP Warning:  Undefined variable $NotifCounter in C:\laragon\www\PAA\templates\notifications.php on line 131
+[10-Mar-2024 22:07:11 Europe/Zagreb] PHP Warning:  Undefined variable $NotifCounter in C:\laragon\www\PAA\templates\notifications.php on line 132
+[10-Mar-2024 22:07:11 Europe/Zagreb] PHP Warning:  Undefined variable $NotifCounter in C:\laragon\www\PAA\templates\notifications.php on line 157
+[10-Mar-2024 22:07:12 Europe/Zagreb] PHP Warning:  Undefined array key "userID" in C:\laragon\www\PAA\templates\config.php on line 386
+[10-Mar-2024 22:07:12 Europe/Zagreb] PHP Warning:  Undefined variable $NotifEClass in C:\laragon\www\PAA\templates\notifications.php on line 129
+[10-Mar-2024 22:07:12 Europe/Zagreb] PHP Warning:  Undefined variable $NotifCounter in C:\laragon\www\PAA\templates\notifications.php on line 131
+[10-Mar-2024 22:07:12 Europe/Zagreb] PHP Warning:  Undefined variable $NotifCounter in C:\laragon\www\PAA\templates\notifications.php on line 132
+[10-Mar-2024 22:07:12 Europe/Zagreb] PHP Warning:  Undefined variable $NotifCounter in C:\laragon\www\PAA\templates\notifications.php on line 157

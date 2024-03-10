@@ -14,46 +14,46 @@ $logArray['3'] = $_SERVER['REQUEST_URI'];
 
 
 //START - Check if all required variables are present ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-isset($_GET['userName'])    ? $user_name=$_GET['userName']     : $errorDisplay .= " Missing User Name /";
-isset($_GET['userEmail'])   ? $user_email=$_GET['userEmail']    : $errorDisplay .= " Missing User Email /";
+isset($_POST['userName'])    ? $user_name=$_POST['userName']     : $errorDisplay .= " Missing User Name /";
+isset($_POST['userEmail'])   ? $user_email=$_POST['userEmail']    : $errorDisplay .= " Missing User Email /";
 
-isset($_GET['userDob']) OR isset($_GET['userDobUS']) OR isset($_GET['dob_day']) ? $dob = "Yes"   : $errorDisplay .= " Missing User Date of Birth (Both US and EU Fields) /";
-if(isset($_GET['userDob']))$user_dob = $_GET['userDob'];
+isset($_POST['userDob']) OR isset($_POST['userDobUS']) OR isset($_POST['dob_day']) ? $dob = "Yes"   : $errorDisplay .= " Missing User Date of Birth (Both US and EU Fields) /";
+if(isset($_POST['userDob']))$user_dob = $_POST['userDob'];
 
-if(isset($_GET['userDobUS'])){
-$originalDate = $_GET['userDobUS'];
+if(isset($_POST['userDobUS'])){
+$originalDate = $_POST['userDobUS'];
 $user_dob = date("d-m-Y", strtotime($originalDate));
 }
 
-if(isset($_GET['dob_day'])){
-$user_dob = $_GET['dob_day']."-".$_GET['dob_month']."-".$_GET['dob_year'];
+if(isset($_POST['dob_day'])){
+$user_dob = $_POST['dob_day']."-".$_POST['dob_month']."-".$_POST['dob_year'];
 }
 
-isset($_GET['product'])  ? $order_product = $_GET['product']   : $errorDisplay .= " Missing Product ID /";
-isset($_GET['priority']) ? $order_priority = $_GET['priority'] : $order_priority = "48";
+isset($_POST['product'])  ? $order_product = $_POST['product']   : $errorDisplay .= " Missing Product ID /";
+isset($_POST['priority']) ? $order_priority = $_POST['priority'] : $order_priority = "48";
 
-isset($_GET['cookie_id1']) ? $cookie_id1 = $_GET['cookie_id1'] : $errorDisplay .= " Missing User Cookie ID 1 /";
-isset($_GET['cookie_id2']) ? $cookie_id2 = $_GET['cookie_id2'] : $errorDisplay .= " Missing User Cookie ID 2 /";
-isset($_GET['cookie_id3']) ? $cookie_id3 = $_GET['cookie_id3'] : $errorDisplay .= " Missing User Cookie ID 3 /";
-isset($_GET['landingpage']) ? $landing = $_GET['landingpage'] : $errorDisplay .= " Missing Landing Page ID /";
+isset($_POST['cookie_id1']) ? $cookie_id1 = $_POST['cookie_id1'] : $errorDisplay .= " Missing User Cookie ID 1 /";
+isset($_POST['cookie_id2']) ? $cookie_id2 = $_POST['cookie_id2'] : $errorDisplay .= " Missing User Cookie ID 2 /";
+isset($_POST['cookie_id3']) ? $cookie_id3 = $_POST['cookie_id3'] : $errorDisplay .= " Missing User Cookie ID 3 /";
+isset($_POST['landingpage']) ? $landing = $_POST['landingpage'] : $errorDisplay .= " Missing Landing Page ID /";
 
-isset($_GET['countdown']) ? $getcountdown = $_GET['countdown'] : $errorDisplay .= " Missing Countdown Variable /";
-isset($_GET['formused']) ? $getformused = $_GET['formused'] : $errorDisplay .= " Missing FormUsed ID /";
-isset($_GET['btncolor']) ? $fbtncolor = $_GET['btncolor'] : $errorDisplay .= " Missing Button Color /";
+isset($_POST['countdown']) ? $getcountdown = $_POST['countdown'] : $errorDisplay .= " Missing Countdown Variable /";
+isset($_POST['formused']) ? $getformused = $_POST['formused'] : $errorDisplay .= " Missing FormUsed ID /";
+isset($_POST['btncolor']) ? $fbtncolor = $_POST['btncolor'] : $errorDisplay .= " Missing Button Color /";
 
-isset($_GET['form_submit']) ? $getButtonText = $_GET['btntext'] : $getButtonText = "Place an order";
+isset($_POST['form_submit']) ? $getButtonText = $_POST['btntext'] : $getButtonText = "Place an order";
 
-isset($_GET['fbp']) ? $uFBP = $_GET['fbp'] : $uFBP = "";
-isset($_GET['fbc']) ? $uFBC = $_GET['fbc'] : $uFBC = "";
+isset($_POST['fbp']) ? $uFBP = $_POST['fbp'] : $uFBP = "";
+isset($_POST['fbc']) ? $uFBC = $_POST['fbc'] : $uFBC = "";
 
-isset($_GET['ip']) ? $addip = $_GET['ip'] : $addip = "";
-isset($_GET['agent']) ? $addagent = $_GET['agent'] : $addagent = "";
+isset($_POST['ip']) ? $addip = $_POST['ip'] : $addip = "";
+isset($_POST['agent']) ? $addagent = $_POST['agent'] : $addagent = "";
 
-isset($_GET['affid']) ? $affid = $_GET['affid'] : $affid = "";
-isset($_GET['cid']) ? $cid = $_GET['cid'] : $cid = "";
+isset($_POST['affid']) ? $affid = $_POST['affid'] : $affid = "";
+isset($_POST['cid']) ? $cid = $_POST['cid'] : $cid = "";
 
-isset($_GET['subid1']) ? $subid1 = $_GET['subid1'] : $subid1 = "";
-isset($_GET['subid2']) ? $subid2 = $_GET['subid2'] : $subid2 = "";
+isset($_POST['subid1']) ? $subid1 = $_POST['subid1'] : $subid1 = "";
+isset($_POST['subid2']) ? $subid2 = $_POST['subid2'] : $subid2 = "";
 
 $order_date = date('Y-m-d H:i:s');
 $partnerGender = "male";

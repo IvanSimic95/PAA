@@ -291,7 +291,6 @@ $customJSPreload .= '
 <link rel="preload" href="/assets/js/jquery.validate.min.js" as="script">
 <link rel="preload" href="/assets/js/progressbar.js" as="script">
 <link rel="preload" href="/assets/js/form-normal.js" as="script">
-<link rel="preload" href="/assets/js/verimail.jquery.min.js" as="script">
 ';
 $customCSS .= '<link href="/assets/css/form-normal.css" rel="stylesheet">
 <link href="/assets/css/lightslider.css" rel="stylesheet">';
@@ -299,7 +298,6 @@ $customJS .= <<<EOT
 <script src="/assets/js/jquery.validate.min.js"></script>
 <script src="/assets/js/progressbar.js"></script>
 <script src="/assets/js/form-normal.js"></script>
-<script src="/assets/js/verimail.jquery.min.js"></script>
 
 <script>
 var econtainer = $(".error-container");

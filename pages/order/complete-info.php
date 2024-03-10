@@ -59,126 +59,141 @@ if(isset($_POST['form_submit'])){
 
   $DBsaved = 1;
 
-$_SESSION['name'] = $newName;
-$_SESSION['email'] = $newEmail;
-$_SESSION['dob'] = $new_user_dob;
-$_SESSION['dobUS'] = date("m/d/Y", strtotime($new_user_dob));
-$_SESSION['gender'] = $newGender;
-$_SESSION['partnerGender'] = $newPGender;
+        $_SESSION['name'] = $newName;
+        $_SESSION['email'] = $newEmail;
+        $_SESSION['dob'] = $new_user_dob;
+        $_SESSION['dobUS'] = date("m/d/Y", strtotime($new_user_dob));
+        $_SESSION['gender'] = $newGender;
+        $_SESSION['partnerGender'] = $newPGender;
 
 
-$_SESSION['FBdob'] = date("Ymd", strtotime($_SESSION['dob']));
+        $_SESSION['FBdob'] = date("Ymd", strtotime($_SESSION['dob']));
 
-$_SESSION['gender'] = $rowU['gender'];
-$_SESSION['partnerGender'] = $rowU['partner_gender'];
+        $_SESSION['gender'] = $rowU['gender'];
+        $_SESSION['partnerGender'] = $rowU['partner_gender'];
 
-$gender = $_SESSION['gender'];
-switch ($gender) {
+        $gender = $_SESSION['gender'];
+        switch ($gender) {
 
-    case "male":
-    $_SESSION['FBgender'] = "m";
-    break;
+            case "male":
+            $_SESSION['FBgender'] = "m";
+            break;
 
-    case "female":
-    $_SESSION['FBgender'] = "f";
-    break;
+            case "female":
+            $_SESSION['FBgender'] = "f";
+            break;
 
-    default:
-    $_SESSION['FBgender'] = "f";
-    break;
-}
-
-
-$galert = "Your Changes have been Saved!";
-  }else{
-  $dashboardRedirect = 0;
-  }
-  $userID = $nuserID;
-
-  }
-}else{
-
-  if(isset($_GET['user_ID'])){
-    $userID = $_GET['user_ID'];
-  }else{
-
-  
-
-if(isset($_SESSION['orderID'])){
-  $orderID = $_SESSION['orderID'];
-
-  if(isset($_SESSION['userID'])){
-    $userID = $_SESSION['userID'];
-    }else{ 
-    $sqlU = "SELECT * FROM `orders` WHERE `order_id` = $orderID";
-    $resultU = $conn->query($sqlU);
-      if($resultU->num_rows == 0) {
-          $errorDisplay .= " User ID Not Found /";
-          $logArray[] = "User ID Not Found";
-       }else{
-          $row = $resultU->fetch_assoc();
-          $userID = $row["user_id"];
-          $logArray[] = "User ID found using Order ID";
-      }
+            default:
+            $_SESSION['FBgender'] = "f";
+            break;
     }
-}
-
-if(isset($userID)){
-$dashboardRedirect = 0;
-$dashboardLink = "/dashboard";
-
-$cookie_name = "userID";
-$cookie_value = $userID;
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-
-$sql = "SELECT * FROM users WHERE id = '$userID'";
-$result = $conn->query($sql);
-
-$sql2 = "SELECT * FROM orders WHERE user_id = '$userID'";
-$result2 = $conn->query($sql2);
-
-$row = mysqli_fetch_assoc($result);
 
 
-$_SESSION['id'] = $row['id'];
-$_SESSION['name'] = $row['full_name'];
-$_SESSION['fname'] = $row['first_name'];
-$_SESSION['lname'] = $row['last_name'];
-$_SESSION['email'] = $row['email'];
-$_SESSION['dob'] = $row['dob'];
-$_SESSION['dobUS'] = date("m/d/Y", strtotime($_SESSION['dob']));
-$_SESSION['gender'] = $row['gender'];
-$_SESSION['partnerGender'] = $row['partner_gender'];
-$_SESSION['orders'] = $result2->num_rows;
-$_SESSION['loggedIn'] = "yes";
+    $galert = "Your Changes have been Saved!";
+    }else{
+    $dashboardRedirect = 0;
+    }
+    $userID = $nuserID;
 
-$order_email = $_SESSION['email'];
-
-$sql0 = "SELECT * FROM orders WHERE order_email = '$order_email' AND order_status = 'pending'";
-$result0 = $conn->query($sql0);
-$countPending = $result0->num_rows;
-
-$sql1 = "SELECT * FROM orders WHERE order_email = '$order_email' AND order_status = 'processing'";
-$result1 = $conn->query($sql1);
-$countProcessing = $result1->num_rows;
-
-$sql2 = "SELECT * FROM orders WHERE order_email = '$order_email' AND order_status = 'completed'";
-$result2 = $conn->query($sql2);
-$countCompleted = $result2->num_rows;
-
-$_SESSION['peOrders'] =$countPending;
-$_SESSION['pOrders'] = $countProcessing;
-$_SESSION['cOrders'] = $countCompleted;
-
-}elseif(isset($_SESSION['userEmail'])){
-$dashboardRedirect = 1;
-$dashboardLink = "/dashboard?login=yes&check_email=".$_SESSION['userEmail'];
+    }
 }else{
-$dashboardRedirect = 1;
-$dashboardLink = "/dashboard";
-}
-}
-}
+
+
+    
+
+    if(isset($_SESSION['orderID'])){
+    $orderID = $_SESSION['orderID'];
+
+
+    if(isset($_SESSION['userID'])){
+        $userID = $_SESSION['userID'];
+        }else{ 
+        $sqlU = "SELECT * FROM `orders` WHERE `order_id` = $orderID";
+        $resultU = $conn->query($sqlU);
+        if($resultU->num_rows == 0) {
+            $errorDisplay .= " User ID Not Found /";
+            $logArray[] = "User ID Not Found";
+        }else{
+            $row = $resultU->fetch_assoc();
+            $userID = $row["user_id"];
+            $logArray[] = "User ID found using Order ID";
+        }
+    }
+    }elseif(isset($_GET['custom'])){
+        $orderID = $_GET['custom'];
+
+        if(isset($_SESSION['userID'])){
+            $userID = $_SESSION['userID'];
+            }else{ 
+            $sqlU = "SELECT * FROM `orders` WHERE `order_id` = $orderID";
+            $resultU = $conn->query($sqlU);
+            if($resultU->num_rows == 0) {
+                $errorDisplay .= " User ID Not Found /";
+                $logArray[] = "User ID Not Found";
+            }else{
+                $row = $resultU->fetch_assoc();
+                $userID = $row["user_id"];
+                $logArray[] = "User ID found using Order ID";
+            }
+        }
+    }
+
+    if(isset($userID)){
+    $dashboardRedirect = 0;
+    $dashboardLink = "/dashboard";
+
+    $cookie_name = "userID";
+    $cookie_value = $userID;
+    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
+    $sql = "SELECT * FROM users WHERE id = '$userID'";
+    $result = $conn->query($sql);
+
+    $sql2 = "SELECT * FROM orders WHERE user_id = '$userID'";
+    $result2 = $conn->query($sql2);
+
+    $row = mysqli_fetch_assoc($result);
+
+
+    $_SESSION['id'] = $row['id'];
+    $_SESSION['name'] = $row['full_name'];
+    $_SESSION['fname'] = $row['first_name'];
+    $_SESSION['lname'] = $row['last_name'];
+    $_SESSION['email'] = $row['email'];
+    $_SESSION['dob'] = $row['dob'];
+    $_SESSION['dobUS'] = date("m/d/Y", strtotime($_SESSION['dob']));
+    $_SESSION['gender'] = $row['gender'];
+    $_SESSION['partnerGender'] = $row['partner_gender'];
+    $_SESSION['orders'] = $result2->num_rows;
+    $_SESSION['loggedIn'] = "yes";
+
+    $order_email = $_SESSION['email'];
+
+    $sql0 = "SELECT * FROM orders WHERE order_email = '$order_email' AND order_status = 'pending'";
+    $result0 = $conn->query($sql0);
+    $countPending = $result0->num_rows;
+
+    $sql1 = "SELECT * FROM orders WHERE order_email = '$order_email' AND order_status = 'processing'";
+    $result1 = $conn->query($sql1);
+    $countProcessing = $result1->num_rows;
+
+    $sql2 = "SELECT * FROM orders WHERE order_email = '$order_email' AND order_status = 'completed'";
+    $result2 = $conn->query($sql2);
+    $countCompleted = $result2->num_rows;
+
+    $_SESSION['peOrders'] =$countPending;
+    $_SESSION['pOrders'] = $countProcessing;
+    $_SESSION['cOrders'] = $countCompleted;
+
+    }elseif(isset($_SESSION['userEmail'])){
+    $dashboardRedirect = 1;
+    $dashboardLink = "/dashboard?login=yes&check_email=".$_SESSION['userEmail'];
+    }else{
+    $dashboardRedirect = 1;
+    $dashboardLink = "/dashboard";
+    }
+    }
+
 if($dashboardRedirect == 1){
 ?>
 

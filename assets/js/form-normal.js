@@ -45,9 +45,11 @@ $(document).ready(function(){
   
   
     });
-  
+
+
 
     var regexname=/^([A-Za-z\s]{3,24})$/;
+    var regemail=/\S+@\S+\.\S+/;
     $('#userName').on('keypress keydown keyup',function(){
             if (!$(this).val().match(regexname)) {
               // If username is too long
@@ -63,9 +65,15 @@ $(document).ready(function(){
 
     $('#userEmail').on('keypress keydown keyup',function(){
 
-        
+      if (!$(this).val().match(regemail)) {
         $("#userEmail").removeClass("is-valid");
         $("#userEmail").addClass("is-invalid");
+      }else{
+        $("#userEmail").removeClass("is-invalid");
+        $("#userEmail").addClass("is-valid");
+      }
+        
+
      
         
 

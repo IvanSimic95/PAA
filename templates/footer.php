@@ -110,19 +110,6 @@
   
 
 <script>
-   var width = $(window).width();
-      if(width < 750) {
-  $(document).scroll(function() {
-      var y = $(this).scrollTop();
-      if (y > 500) {
-          $('#phone-main-navbar').slideDown();
-      } else {
-          $('#phone-main-navbar').slideUp();
-      }
-    });
-}
-
-
 $(document).ready(function($) {
 var preloader = $('.preloader');
 preloader.addClass('loader-activate') 

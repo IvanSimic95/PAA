@@ -158,7 +158,6 @@ $customJS .= <<<EOT
 <script src="/assets/js/type-it.js"></script>
 <script src="/assets/js/progressbar.js"></script>
 <script src="/assets/js/form-interactive.js"></script>
-<script src="/assets/js/verimail.jquery.min.js"></script>
 
 <script>
 
