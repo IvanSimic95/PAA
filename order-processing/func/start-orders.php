@@ -63,8 +63,6 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			$dbaffID = $row["affid"];
 			$dbclickID = $row["clickid"];
 
-			$pid = $row["pid"];
-			$pubid = $row["pubid"];
 
 
 			$price = $row["order_price"];
