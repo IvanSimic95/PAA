@@ -1,5 +1,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/templates/config.php';
+require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+use Mailgun\Mailgun;
 echo "Starting complete-orders.php...<br><br>";
 
 	$sql = 'SELECT * from orders WHERE order_status = "processing"';
@@ -20,6 +22,7 @@ echo "Starting complete-orders.php...<br><br>";
 			$orderID = $row["order_id"];
 			$userID = $row["user_id"];
 			$orderEmail = $row["order_email"];
+			$emailLink = $base_url ."/dashboard?loggedin=yes&check_email=" .$orderEmail;
 			$orderAge = $row["user_age"];
 			$orderPrio = $row["order_priority"];
 			$orderProduct = $row["order_product"];
@@ -448,7 +451,7 @@ echo "Starting complete-orders.php...<br><br>";
 						$logArray[] = "Insert Notification Failed";
 					}
 
-					if($imgError == 0){
+	if($imgError == 0){	
 
 			$orderDate = $row["order_date"];
 			$orderName = $row["user_name"];
@@ -460,6 +463,7 @@ echo "Starting complete-orders.php...<br><br>";
 			$orderAge = $row["user_age"];
 			$orderPrio = $row["order_priority"];
 			$orderProduct = $row["order_product"];
+			$productNice = $row["product_nice"];
 			$orderSex = $row["pick_sex"];
 			$userSex = $row["user_sex"];
 			$date1 = $orderDate;
@@ -468,46 +472,54 @@ echo "Starting complete-orders.php...<br><br>";
 			$end = new \DateTime($date2);
 			$interval = new \DateInterval('PT1H');
 			$periods = new \DatePeriod($start, $interval, $end);
+			$orderProductCode = $row["product_codename"];
 			$hours = iterator_count($periods);
 
 			$price = $row["order_price"];
 			$bg_email = $row["bg_email"];
 			$product_nice = $row["product_nice"];
 
-			//Send data to zapier so it can submit FB conversion and send an email to user
-			$ch = curl_init();
-			$data = [
-			"fname" => $fName,
-			"lname" => $lName,
-			"orderID" => $orderID,
-			"userID" => $userID,
-			"email" => $orderEmail,
-			"priority" => $orderPrio,
-			"product" => $orderProduct,
-			"product_nice" => $product_nice,
-			"hours" => $hours,
-			"gender" => $userSex,
-			"Pgender" => $orderSex,
-			"price" => $price,
-			"fbp" => $FBP,
-			"fbc" => $FBC
-			];
-
-			$jData = json_encode($data);
-			curl_setopt($ch, CURLOPT_URL, 'https://hooks.zapier.com/hooks/catch/4722157/bihdogp/');
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $jData);
-			$headers = array();
-			$headers[] = 'Content-Type: application/json';
-			$headers[] = 'Authorization: Bearer sk_7b8f2be0b4bc56ddf0a3b7a1eed2699d19e3990ebd3aa9e9e5c93815cdcfdc64';
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			$result = curl_exec($ch);
-			$logArray[] =  "Data sent to zapier";
-			echo "Data send to zapier";
+			$reading = trim(preg_replace('/\s+/', ' ', $message));
+			$reading = str_replace("<br>"," ",$reading);
+			$drawing = $imgURL;
 
 
-		}
+		switch ($orderProductCode) {
+			case "soulmate":
+				$emailImage = "https://psychic-artist.com/assets/img/products/soulmate/1new6.jpg";
+				$emailProdTitle = "Soulmate Drawing & Reading";
+			break;
+		
+			case "personal":
+			  $emailImage = "https://psychic-artist.com/assets/img/psychic.jpg";
+			  $emailProdTitle = "Personal Reading";
+			break;
+		
+			case "future-baby":
+				$emailImage = "https://psychic-artist.com/assets/img/baby.jpg";
+				$emailProdTitle = "Future Baby Drawing & Reading";
+			break;
+		
+			default:
+			$emailImage = "https://psychic-artist.com/assets/img/products/soulmate/1new6.jpg";
+			$emailProdTitle = "Soulmate Drawing & Reading";
+		  }
+		  $messageComplete = "Your order is now complete, to access full reading please login to website by clicking button below!";
+		$mg = Mailgun::create($mgkey, 'https://api.eu.mailgun.net'); // For EU servers
+		
+		// Now, compose and send your message.
+		// $mg->messages()->send($domain, $params);
+		/*
+		$mg->messages()->send('notification.psychic-artist.com', [
+		  'from'    => 'Psychic Empress <noreply@notification.psychic-artist.com>',
+		  'to'      => $orderEmail,
+		  'subject' => 'Order Complete!',
+		  'text'    => 'Your Order is now complete!',
+		  'template'=> 'neworder',
+		  'h:X-Mailgun-Variables' => '{"EmailTitle": "Order Complete!", "orderNumber": "'.$orderID.'", "emailText": "'.$messageComplete.'", "emailButton": "'.$emailLink.'", "emailIMG": "'.$emailImage.'", "productTitle": "'.$emailProdTitle.'"}'
+		]);
+*/
+	}
 		
 
 
