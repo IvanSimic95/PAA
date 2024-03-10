@@ -22,11 +22,12 @@ if(isset($_POST['userDob']))$user_dob = $_POST['userDob'];
 
 if(isset($_POST['userDobUS'])){
 $originalDate = $_POST['userDobUS'];
-$user_dob = date("d-m-Y", strtotime($originalDate));
+$user_dob = date("Y-m-d", strtotime($originalDate));
 }
 
 if(isset($_POST['dob_day'])){
 $user_dob = $_POST['dob_day']."-".$_POST['dob_month']."-".$_POST['dob_year'];
+$user_dob = $_POST['dob_year']."-".$_POST['dob_month']."-".$_POST['dob_day'];
 }
 
 isset($_POST['product'])  ? $order_product = $_POST['product']   : $errorDisplay .= " Missing Product ID /";
