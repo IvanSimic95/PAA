@@ -2,7 +2,8 @@
     "require": {
         "nyholm/psr7": "^1.5",
         "symfony/http-client": "^6.2",
-        "theiconic/name-parser": "^1.2"
+        "theiconic/name-parser": "^1.2",
+        "wildbit/postmark-php": "^6.0"
     },
     "minimum-stability": "dev",
     "prefer-stable" : true,
