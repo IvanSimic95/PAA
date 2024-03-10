@@ -1,6 +1,6 @@
 <?php
 $order_email = $_SESSION['email'];
-$sql = "SELECT * FROM orders WHERE order_email = '$order_email' ORDER BY order_id DESC LIMIT 3";
+$sql = "SELECT * FROM orders WHERE order_email = '$order_email' ORDER BY order_id DESC";
 $result = $conn->query($sql);
 ?>
 <div class="row g-3 mb-3 mt-0">
@@ -96,7 +96,7 @@ $orders = <<<EOT
             </div>
         </div>
 EOT;
-echo $orders;
+#echo $orders;
             }
 
 
