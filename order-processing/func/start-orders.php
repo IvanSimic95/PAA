@@ -9,7 +9,6 @@ echo "Starting start-orders.php...<br><br>";
 
 
 
-
 // 1. Check and select paid orders.
 
 	$sqlpending = "SELECT * FROM `orders` WHERE `order_status` = 'paid'";
@@ -30,18 +29,43 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			$orderID = $row["order_id"];
 			$userID = $row["user_id"];
 			$orderProduct = $row["order_product"];
+			$orderProductCode = $row["product_codename"];
+			$productNice = $row["product_nice"];
 			$orderPriority = $row["order_priority"];
+			$priorityRandom = 3;
+			$orderDate = $row["order_date"];
 			$orderPrio = $orderPriority;
 			$orderSex = $row["pick_sex"];
 			$userSex = $row["user_sex"];
 			$orderEmail = $row["order_email"];
-			$emailLink = $base_url ."/dashboard.php?check_email=" .$orderEmail;
+			$emailLink = $base_url ."/dashboard?loggedin=yes&check_email=" .$orderEmail;
 			$message = $processingWelcome;
+			$birthday = $row["birthday"];
+			$niceBirthday = date('F d, Y', strtotime($birthday));
+
+			$orderPrice = $row["order_price"];
+
+			$finalPriority = $orderPriority - $priorityRandom;
+			$orderTime = (strtotime($orderDate));
+			$newDateDay = date('F d,', strtotime('+'.$orderPriority.' hours', $orderTime));
+
+			$newDateHourMin = date('h A', strtotime('+'.$finalPriority.' hours', $orderTime));
+			$newDateHourMax = date('h A', strtotime('+'.$orderPriority.' hours', $orderTime));
+
+			$DeliveryTime = $newDateDay." ".$newDateHourMin." - ".$newDateHourMax;
+
+			$fbp = $row["fbp"];
+			$fbc = $row["fbc"];
+
+			$ip = $row["ip"];
+			$agent = $row["agent"];
 
 			$dbaffID = $row["affid"];
 			$dbclickID = $row["clickid"];
-			$subid1 = $row["subid1"];
-			$subid2 = $row["subid2"];
+
+			$pid = $row["pid"];
+			$pubid = $row["pubid"];
+
 
 			$price = $row["order_price"];
 			$bg_email = $row["bg_email"];
@@ -73,7 +97,6 @@ $logArray['1'] = date("d-m-Y H:i:s");
 
 			if($cart=="active"){
 			//CODE TO STOP ABANDONED CART PROCESS
-			
 
 			}
             
@@ -100,7 +123,7 @@ $logArray['1'] = date("d-m-Y H:i:s");
 
 			$sql3 = "INSERT INTO notifications (user_id, order_id, unread, title, description, custom, time) VALUES ('$userID', '$orderID', '1', 'Status Updated' , 'Order Status updated to Processing!', 'test', '$TimeNow')";
    			if ($conn->query($sql3) === TRUE) {
-				echo "Notification Success ";
+				echo "Notification Success";
 				$logArray[] = "Insert Notification Success";
    			} else {
 				echo "Notification Failed ";
@@ -121,103 +144,267 @@ $logArray['1'] = date("d-m-Y H:i:s");
 			}
 
 
-			if($orderProduct == "soulmate" OR $orderProduct == "twinflame" OR $orderProduct == "futurespouse"){
-				if($affID!=0){
-				//Code to send to aff network
-				}
-			}
+			//Facebook API conversion
+if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
+	if($sendFBAPI == 1){
+	 $fixedBirthday = date("Ymd", strtotime($birthday));
+	 if($userSex == "male"){
+		$usersex1 = "m";
+	}else{
+		$usersex1 = "f";
+	}
 
 
-			use Postmark\PostmarkClient;
-			$client = new PostmarkClient($em);
-			$fromEmail = "contact@psychic-artist.com";
-			$toEmail = "contact@psychic-artist.com";
-			$subject = "Hello from Postmark";
-			$htmlBody = "<strong>Hello</strong> dear Postmark user.";
-			$textBody = "Hello dear Postmark user.";
-			$tag = "example-email-tag";
-			$trackOpens = true;
-			$trackLinks = "None";
-			$messageStream = "outbound";
 
-			// Send an email:
-			$sendResult = $client->sendEmail(
-			$fromEmail,
-			$toEmail,
-			$subject,
-			$htmlBody,
-			$textBody,
-			$tag,
-			$trackOpens,
-			NULL, // Reply To
-			NULL, // CC
-			NULL, // BCC
-			NULL, // Header array
-			NULL, // Attachment array
-			$trackLinks,
-			NULL, // Metadata array
-			$messageStream
+ 
+	 if (!empty($fbc) AND empty($fbp)) {
+		 $data = array( // main object
+			 "data" => array( // data array
+				 array(
+					 
+					 "event_name" => "Purchase",
+					 "event_time" => time(),
+					 "event_id" => $orderID,
+					 "user_data" => array(
+						 "fn" => hash('sha256', $fName),
+						 "ln" => hash('sha256', $lName),
+						 "em" => hash('sha256', $orderEmail),
+						 "db" => hash('sha256', $fixedBirthday),
+						 "ge" => hash('sha256', $usersex1),
+						 "external_id" => hash('sha256', $orderID),
+						 "fbc" => $fbc,
+						 "client_ip_address" => $ip,
+						 "client_user_agent" => $agent,
+	
+					 ),
+					 "contents" => array(
+						 array(
+						 "id" => $orderProduct,
+						 "quantity" => 1
+						 ),
+					 ),
+					 "custom_data" => array(
+						 "currency" => "USD",
+						 "value"    => $orderPrice,
+					 ),
+					 "action_source" => "website",
+					 "event_source_url"  => "https://".$domain."/readings.php",
+				),
+			 ),
+				"access_token" => $fbAccessToken,
+				
+			 ); 
+	 }elseif(empty($fbp) AND !empty($fbc)){
+		 $data = array( // main object
+			 "data" => array( // data array
+				 array(
+					 
+					 "event_name" => "Purchase",
+					 "event_time" => time(),
+					 "event_id" => $orderID,
+					 "user_data" => array(
+						"fn" => hash('sha256', $fName),
+						"ln" => hash('sha256', $lName),
+						"em" => hash('sha256', $orderEmail),
+						"db" => hash('sha256', $fixedBirthday),
+						"ge" => hash('sha256', $usersex1),
+						"external_id" => hash('sha256', $orderID),
+						 "fbp" => $fbp,
+						 "client_ip_address" => $ip,
+						 "client_user_agent" => $agent,
+		
+					 ),
+					 "contents" => array(
+						 array(
+						 "id" => $orderProduct,
+						 "quantity" => 1
+						 ),
+					 ),
+					 "custom_data" => array(
+						 "currency" => "USD",
+						 "value"    => $orderPrice,
+					 ),
+					 "action_source" => "website",
+					 "event_source_url"  => "https://".$domain."/readings.php",
+				),
+			 ),
+				"access_token" => $fbAccessToken,
+				
+			 ); 
+ 
+	 }elseif(!empty($fbp) AND !empty($fbc)){
+		 $data = array( // main object
+			 "data" => array( // data array
+				 array(
+					 
+					 "event_name" => "Purchase",
+					 "event_time" => time(),
+					 "event_id" => $orderID,
+					 "user_data" => array(
+						"fn" => hash('sha256', $fName),
+						"ln" => hash('sha256', $lName),
+						"em" => hash('sha256', $orderEmail),
+						"db" => hash('sha256', $fixedBirthday),
+						"ge" => hash('sha256', $usersex1),
+						"external_id" => hash('sha256', $orderID),
+						 "fbc" => $fbc,
+						 "fbp" => $fbp,
+						 "client_ip_address" => $ip,
+						 "client_user_agent" => $agent,
+		
+					 ),
+					 "contents" => array(
+						 array(
+						 "id" => $orderProduct,
+						 "quantity" => 1
+						 ),
+					 ),
+					 "custom_data" => array(
+						 "currency" => "USD",
+						 "value"    => $orderPrice,
+					 ),
+					 "action_source" => "website",
+					 "event_source_url"  => "https://".$domain."/readings.php",
+				),
+			 ),
+				"access_token" => $fbAccessToken,
+				
+			 ); 
+	 }else{
+	 $data = array( // main object
+		 "data" => array( // data array
+			 array(
+				 
+				 "event_name" => "Purchase",
+				 "event_time" => time(),
+				 "event_id" => $orderID,
+				 "user_data" => array(
+					"fn" => hash('sha256', $fName),
+					"ln" => hash('sha256', $lName),
+					"em" => hash('sha256', $orderEmail),
+					"db" => hash('sha256', $fixedBirthday),
+					"ge" => hash('sha256', $usersex1),
+					"external_id" => hash('sha256', $orderID),
+					 "client_ip_address" => $ip,
+					 "client_user_agent" => $agent,
+
+				 ),
+				 "contents" => array(
+					 array(
+					 "id" => $orderProduct,
+					 "quantity" => 1
+					 ),
+				 ),
+				 "custom_data" => array(
+					 "currency" => "USD",
+					 "value"    => $orderPrice,
+				 ),
+				 "action_source" => "website",
+				 "event_source_url"  => "https://".$domain."/readings.php",
+			),
+		 ),
+			"access_token" => $fbAccessToken,
+			
+		 );  
+		 
+	 }
+		 $dataString = json_encode($data);                                                                                                              
+		 $ch = curl_init('https://graph.facebook.com/v11.0/'.$FBPixel.'/events');                                                                      
+		 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+		 curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);                                                                  
+		 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
+		 curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+			 'Content-Type: application/json',                                                                                
+			 'Content-Length: ' . strlen($dataString))                                                                       
+		 );                                                                                                                                                                       
+		 $response = curl_exec($ch);
+		 error_log($response);
+		 echo $response;
+	 }
+ }
+
+ switch ($orderProductCode) {
+	case "soulmate":
+		$emailImage = "https://psychic-artist.com/assets/img/products/soulmate/1new6.jpg";
+		$emailProdTitle = "Soulmate Drawing & Reading";
+	break;
+
+	case "personal":
+	  $emailImage = "https://psychic-artist.com/assets/img/psychic.jpg";
+	  $emailProdTitle = "Personal Reading";
+	break;
+
+	case "future-baby":
+		$emailImage = "https://psychic-artist.com/assets/img/baby.jpg";
+		$emailProdTitle = "Future Baby Drawing & Reading";
+	break;
+
+	default:
+	$emailImage = "https://psychic-artist.com/assets/img/products/soulmate/1new6.jpg";
+	$emailProdTitle = "Soulmate Drawing & Reading";
+  }
+
+$mg = Mailgun::create($mgkey, 'https://api.eu.mailgun.net'); // For EU servers
+
+// Now, compose and send your message.
+// $mg->messages()->send($domain, $params);
+/*
+$mg->messages()->send('notification.psychic-artist.com', [
+  'from'    => 'Psychic Empress <noreply@notification.psychic-artist.com>',
+  'to'      => $orderEmail,
+  'subject' => 'Payment Confirmed!',
+  'text'    => 'Your Order is now Processing!',
+  'template'=> 'neworder',
+  'h:X-Mailgun-Variables' => '{"EmailTitle": "Payment Confirmed!", "orderNumber": "'.$orderID.'", "emailText": "'.$message.'", "emailButton": "'.$emailLink.'", "emailIMG": "'.$emailImage.'", "productTitle": "'.$emailProdTitle.'"}'
+]);
+*/
+
+/*
+			$email = new Mail();
+			$email->setFrom("contact@psychic-artist.com", "Psychic Empress");
+			$email->setSubject("Payment Confirmed!");
+			$email->addTo(
+				$orderEmail,
+				$orderName,
+				[
+					"fullname" => $orderName,
+					"fname" => $fName,
+					"email" => $orderEmail,
+					"status" => "processing",
+					"product" => $orderProductCode,
+					"productNice" => $productNice,
+					"orderid" => $orderID,
+					"gender" => $userSex,
+					"partner" => $orderSex,
+					"dob" => $niceBirthday,
+					"price" => $price,
+					"emaillink" => $emailLink,
+					"msg" => $message,
+					"delivery" => $DeliveryTime
+				]
 			);
+			$email->setTemplateId("d-94ff935883c14a6186def78f3bef0d84");
+			$sendgrid = new \SendGrid($sendg3);
+			try {
+				$response = $sendgrid->send($email);
+				print_r($response);
+				error_log($orderEmail);
 
-			//Send data to zapier so it can submit FB conversion and send an email to user
-			$ch = curl_init();
-			$data = [
-			"fname" => $fName,
-			"lname" => $lName,
-			"orderID" => $orderID,
-			"userID" => $userID,
-			"email" => $orderEmail,
-			"priority" => $orderPrio,
-			"product" => $orderProduct,
-			"product_nice" => $product_nice,
-			"gender" => $userSex,
-			"Pgender" => $orderSex,
-			"price" => $price
-			];
-
-			$jData = json_encode($data);
-			curl_setopt($ch, CURLOPT_URL, 'https://hooks.zapier.com/hooks/catch/4722157/bih1wv9/');
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $jData);
-			$headers = array();
-			$headers[] = 'Content-Type: application/json';
-			$headers[] = 'Authorization: Bearer sk_7b8f2be0b4bc56ddf0a3b7a1eed2699d19e3990ebd3aa9e9e5c93815cdcfdc64';
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			$result = curl_exec($ch);
-			$logArray[] =  "Data sent to zapier";
-			echo "Data sent to zapier";
+				
+			$logArray[] =  "New order email sent";
+			echo "New order email sent";
 
 			SuperLog($logArray, "start-orders");
 			unset($logArray);
             echo " <br>"; 
+		} catch (Exception $e) { 
+			echo 'Caught exception: '.  $e->getMessage(). "\n";
+			error_log('$e->getMessage()');
 
-			if($dbaffID > 0){
-
-			//Send data to zapier so it can submit FB conversion and send an email to user
-			$ch = curl_init();
-			$data = [
-			"affid" => $dbaffID,
-			"subid1" => $subid1,
-			"subid2" => $subid2
-			];
-
-			$requestURL = "https://www.brcvhf7tf.com/?nid=1488&transaction_id=".$dbclickID;
-			echo $requestURL;
-			
-			$jData = json_encode($data);
-			curl_setopt($ch, CURLOPT_URL, $requestURL);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $jData);
-			$headers = array();
-			$headers[] = 'Content-Type: application/json';
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			$result = curl_exec($ch);
-			echo "Data sent to affiliate postback";
-            echo " <br>"; 
-			}
 		}
+*/
+	
 	}
+}
 	echo "<br><hr>";
  ?>
