@@ -114,7 +114,7 @@ $title = $webTitle;
 $sdescription = $webDescription;
 $pimage = $webLogo;
 
-
+$sendFBAPI = 0;
 $pixelActive = 0;
 
 if(isset($_SERVER['HTTP_USER_AGENT'])){
