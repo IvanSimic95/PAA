@@ -73,7 +73,6 @@ $logArray['1'] = date("d-m-Y H:i:s");
 
 			$message = str_replace("%ORDERID%",   $orderID, $message);
 			$message = str_replace("%PRIORITY%",  $orderPriority, $message);
-			$message = str_replace("%EMAILLINK%", $emailLink , $message);
 
 
 			$sql2 = "SELECT * FROM users WHERE id = '$userID'";
