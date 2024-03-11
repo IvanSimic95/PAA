@@ -54,9 +54,9 @@ $ContinueConvoMsg = "If you want to chat with Melissa, simply reply to this conv
 //END Order Messages
 
 
-$mg1 = "key-3999017a921e";
-$mg2 = "d9b70798a";
-$mg3 = "e02ecc7877b";
+$mg1 = "18e6aa0467b9220f68f4978f19322334";
+$mg2 = "-b02bcf9f";
+$mg3 = "-170e50eb";
 $mgkey = $mg1.$mg2.$mg3;
 
 

@@ -1,9 +1,10 @@
 {
     "require": {
-        "nyholm/psr7": "^1.5",
-        "symfony/http-client": "^6.2",
+        "nyholm/psr7": "^1.8",
+        "symfony/http-client": "^7.0",
         "theiconic/name-parser": "^1.2",
-        "wildbit/postmark-php": "^6.0"
+        "wildbit/postmark-php": "^6.0",
+        "mailgun/mailgun-php": "^4.2"
     },
     "minimum-stability": "dev",
     "prefer-stable" : true,

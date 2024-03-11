@@ -21,7 +21,7 @@ echo "Starting start-orders.php...<br><br>";
 		while($row = $resultpending->fetch_assoc()) {
 $logArray = array();
 $logArray['1'] = date("d-m-Y H:i:s");
-
+ 
 			$orderDate = $row["order_date"];
 			$orderName = $row["user_name"];
 		    $fName = $row["first_name"];
@@ -344,18 +344,16 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
 
 $mg = Mailgun::create($mgkey, 'https://api.eu.mailgun.net'); // For EU servers
 
-// Now, compose and send your message.
-// $mg->messages()->send($domain, $params);
-/*
-$mg->messages()->send('notification.psychic-artist.com', [
-  'from'    => 'Psychic Empress <noreply@notification.psychic-artist.com>',
+
+$mg->messages()->send('email.psychic-artist.com', [
+  'from'    => 'Psychic Artist <noreply@email.psychic-artist.com>',
   'to'      => $orderEmail,
   'subject' => 'Payment Confirmed!',
   'text'    => 'Your Order is now Processing!',
-  'template'=> 'neworder',
-  'h:X-Mailgun-Variables' => '{"EmailTitle": "Payment Confirmed!", "orderNumber": "'.$orderID.'", "emailText": "'.$message.'", "emailButton": "'.$emailLink.'", "emailIMG": "'.$emailImage.'", "productTitle": "'.$emailProdTitle.'"}'
+  'template'=> 'Order Paid',
+  'h:X-Mailgun-Variables' => '{"EmailTitle": "Payment Confirmed!", "delivery": "'.$DeliveryTime.'", "orderNumber": "'.$orderID.'", "emailText": "'.$message.'", "emailButton": "'.$emailLink.'", "emailIMG": "'.$emailImage.'", "productTitle": "'.$emailProdTitle.'"}'
 ]);
-*/
+
 
 /*
 			$email = new Mail();
