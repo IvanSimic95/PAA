@@ -210,7 +210,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
   
   ?>
 
-
+<style>
+#topbar-sticky{
+    top:50px!important;
+    z-index:6666!important;
+}
+#main-nav{
+    top:100px!important;
+}
+</style>
 
 <div class="container-fluid" data-layout="container" style="padding:0!important;padding-top:20px!important;">
     <section class="py-0 light" id="banner">
