@@ -345,7 +345,7 @@ $mg = Mailgun::create($mgkey, 'https://api.eu.mailgun.net'); // For EU servers
 
 
 $mg->messages()->send('email.psychic-artist.com', [
-  'from'    => 'Psychic Artist <noreply@email.psychic-artist.com>',
+  'from'    => 'Psychic Artist <noreply@psychic-artist.com>',
   'to'      => $orderEmail,
   'subject' => 'Payment Confirmed!',
   'text'    => 'Your Order is now Processing!',

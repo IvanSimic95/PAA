@@ -26,7 +26,7 @@ if(isset($_GET['logout'])){
 
 
 //START Order Messages
-$processingWelcome = "We are now processing your Order <b>#%ORDERID%</b> & your order will be delivered to your email in %PRIORITY% hours or less. <br><br>If this is your first order your new account will be created automatically. In order to automatically login to your account just click the button below.";
+$processingWelcome = "We are now processing your Order #%ORDERID% & your order will be delivered to your email in %PRIORITY% hours or less. If this is your first order your new account will be created automatically. In order to automatically login to your account just click the button below.";
 
 
 //Complete Soulmate, Twin Flame & Future Spouse Text added Before and After Order Text
