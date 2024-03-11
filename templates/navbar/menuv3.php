@@ -300,7 +300,7 @@
        </div>
       </div>
       <div class="card-body p-2">    
-       
+        
       <?php if(isset($_SESSION['id'])){ ?>
             <div class="d-flex align-items-center shadow-none" style="border-bottom: 2px solid #f6f9fc;">
                 <div class="avatar avatar-4xl d-sm-inline-block"><img class="rounded-circle"  src="https://avatars.dicebear.com/api/adventurer/<?php echo $_SESSION['email']; ?>.svg" alt="" /></div>
