@@ -15,6 +15,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/templates/rating/rating-total.php';
 $reviews = $count;
 $avgrating = $avg;
 ?>
+<style>
+#topbar-sticky, #main-nav{
+    display:none!important;
+}
+#main-body{
+    padding-top:10px!important;
+}
+    </style>
 <div class="container-fluid" data-layout="container" style="padding:0!important;padding-top:20px!important;">
     <section class="py-0 light" id="banner">
         <div class="container p-0 p-xl-4">
@@ -73,21 +81,19 @@ $avgrating = $avg;
        
        
           <div class="gradient mt-3 mb-3" style="font-size:18px!important;">Imagine seeing not just a pencil sketch, but a radiant, full-color portrait that truly captures the vibrancy of your drawing. The depth of their eyes, the shade of their lips, the colors that capture their essence — all brought to life.</div>
-          <button class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-2 mt-2 fw-bold fs-1" style="display:block;" type="submit" name="form_submit">
-          <i class="fa fa-basket-shopping"></i> Purchase - <span class="updated-price">$19.99</span>
-          </button>
+          <a href="https://www.digistore24.com/answer/yes?template=light" class="btn btn-primary btn-shadow w-100 btn-add-to-cart mb-2 mt-2 fw-bold fs-1" style="display:block;" type="submit" name="form_submit">
+          <i class="fa fa-basket-shopping"></i> Purchase - <span class="updated-price">$9.99</span></a>
 
       
       </div>
      
-      <a href="/order/order-baby?skip=yes">
+      <a href="https://www.digistore24.com/answer/no">
       <div class="nothanks w-100 rounded-3 mb-4">No, Thanks!</div>
       </a>
 
       </form>
 
-      <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/rating/rating-upsell.php'; ?>
-                 
+       
                   </div>
               </div>
             </div>
@@ -103,6 +109,8 @@ $avgrating = $avg;
 $customCSSPreload = '<link rel="preload" href="/assets/css/baby.css" as="style">';
 $customCSS = '<link href="/assets/css/baby.css" rel="stylesheet">';
 $customJS = <<<EOT
+
+<script src="https://www.digistore24.com/service/digistore.js"></script><script>digistoreUpsell()</script>
 <script src="/assets/js/infinite-ajax-scroll.min.js"></script>
 <script>
 $(document).ready(function(){

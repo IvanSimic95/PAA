@@ -15,6 +15,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/templates/rating/rating-total.php';
 $reviews = $count;
 $avgrating = $avg;
 ?>
+<style>
+#topbar-sticky, #main-nav{
+    display:none!important;
+}
+#main-body{
+    padding-top:10px!important;
+}
+    </style>
 <div class="container-fluid" data-layout="container" style="padding:0!important;padding-top:20px!important;">
     <section class="py-0 light" id="banner">
         <div class="container p-0 p-xl-4">
@@ -99,6 +107,8 @@ $avgrating = $avg;
 $customCSSPreload = '<link rel="preload" href="/assets/css/baby.css" as="style">';
 $customCSS = '<link href="/assets/css/baby.css" rel="stylesheet">';
 $customJS = <<<EOT
+
+<script src="https://www.digistore24.com/service/digistore.js"></script><script>digistoreUpsell()</script>
 <script src="/assets/js/infinite-ajax-scroll.min.js"></script>
 <script>
 $(document).ready(function(){

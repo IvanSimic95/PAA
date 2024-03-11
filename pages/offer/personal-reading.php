@@ -27,6 +27,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/templates/rating/rating-total.php';
 $reviews = $count;
 $avgrating = $avg;
 ?>
+<style>
+#topbar-sticky, #main-nav{
+    display:none!important;
+}
+#main-body{
+    padding-top:10px!important;
+}
+    </style>
 <div class="container-fluid" data-layout="container" style="padding:0!important;padding-top:20px!important;">
     <section class="py-0 light" id="banner">
         <div class="container p-0 p-xl-4">
@@ -91,41 +99,7 @@ $avgrating = $avg;
 
                                 <?php } ?>
 
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-control">
-                                        <label class="custom-control fill-checkbox">
-                                            <input type="checkbox" class="fill-control-input" id="general"
-                                                name="general" value="general" checked="">
-                                            <span class="fill-control-indicator"></span>
-                                            <span class="fill-control-description">General Reading</span>
-                                        </label>
-                                    </li>
-                                    <li class="list-group-control">
-                                        <label class="custom-control fill-checkbox">
-                                            <input type="checkbox" class="fill-control-input" id="love" name="love"
-                                                value="love">
-                                            <span class="fill-control-indicator"></span>
-                                            <span class="fill-control-description">Love Reading</span>
-                                        </label>
-                                    </li>
-                                    <li class="list-group-control">
-                                        <label class="custom-control fill-checkbox">
-                                            <input type="checkbox" class="fill-control-input" id="career" name="career"
-                                                value="career">
-                                            <span class="fill-control-indicator"></span>
-                                            <span class="fill-control-description">Career Reading</span>
-                                        </label>
-                                    </li>
-                                    <li class="list-group-control">
-                                        <label class="custom-control fill-checkbox">
-                                            <input type="checkbox" class="fill-control-input" id="health" name="health"
-                                                value="health">
-                                            <span class="fill-control-indicator"></span>
-                                            <span class="fill-control-description">Health Reading</span>
-                                        </label>
-                                    </li>
-
-                                </ul>
+                               
 
 
                                 <input class="cookie" type="hidden" name="cookie_id1"
@@ -150,7 +124,7 @@ $avgrating = $avg;
                                     <button class="btn btn-primary w-100 btn-add-to-cart fw-bold fs-1"
                                         style="display:block;" type="submit" name="form_submit" value="Place an order">
                                         <i class="fa fa-basket-shopping"></i> Purchase - <span
-                                            class="updated-price">$19.99</span>
+                                            class="updated-price">$14.99</span>
                                     </button>
 
 
@@ -202,6 +176,8 @@ $customCSSPreload = '<link rel="preload" href="/assets/css/readings.css" as="sty
 $customCSS = '<link href="/assets/css/readings.css" rel="stylesheet">';
 $customJS = <<<EOT
 <script src="/assets/js/infinite-ajax-scroll.min.js"></script>
+
+<script src="https://www.digistore24.com/service/digistore.js"></script><script>digistoreUpsell()</script>
 <script>
       var checkboxes = $('.list-group-control input[type="checkbox"]');
 
