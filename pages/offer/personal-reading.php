@@ -113,7 +113,7 @@ $avgrating = $avg;
 
 
                                 <div class="fixed-bottom mx-auto" style="max-width:800px;">
-                                    <button class="btn btn-primary w-100 btn-add-to-cart fw-bold fs-1"
+                                    <a href="https://www.digistore24.com/answer/yes?template=light" class="btn btn-primary w-100 btn-add-to-cart fw-bold fs-1"
                                         style="display:block;" type="submit" name="form_submit" value="Place an order">
                                         <i class="fa fa-basket-shopping"></i> Purchase - <span
                                             class="updated-price">$14.99</span>
@@ -122,7 +122,7 @@ $avgrating = $avg;
 
 
 
-                                    <a href="/order/order-reading?skip=yes">
+                                    <a href="https://www.digistore24.com/answer/no">
                                         <div class="nothanks w-100 rounded-3 bg-white mt-1">No, Thanks!</div>
                                     </a>
                                 </div>
