@@ -91,6 +91,10 @@ $avgrating = $avg;
       <div class="nothanks w-100 rounded-3 mb-4">No, Thanks!</div>
       </a>
 
+      <p style="letter-spacing: -0.25px;font-size: 14px;line-height: 1.2;margin-top: 20px;text-align:center;">
+									<span style="color: #09c100;font-weight:700;">$</span> Get a 60 day money back guarantee if you aren't satisfied.
+								</p>
+
       </form>
 
        

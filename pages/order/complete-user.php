@@ -41,7 +41,7 @@ $galert = "Your Orders have been Created!";
       </div>
 
       <div class="alert alert-warning border-2 d-flex align-items-center mt-2" role="alert">
-      <p class="mb-0 flex-1">Please note that your Purchase Will Be Reflected as "ClickBank or "CLKBANK*COM"</p>
+      <p class="mb-0 flex-1">Please note that your Purchase Will Be Reflected as "Digistore24"</p>
       </div>
    
                

@@ -2,17 +2,9 @@
 #include $_SERVER['DOCUMENT_ROOT'].'/templates/noskip.php';
 isset($_SESSION['userFName']) ? $fName = $_SESSION['userFName'] : $fName = "there";
 
-if(isset($_GET['order_ID'])){
-  $order_ID = $_GET['order_ID'];
-  $main_ID = $_GET['main_ID'];
-  $user_ID = $_GET['user_ID'];
+
   $showfields = 0;
-}else{
-  $order_ID = NULL;
-  $main_ID = NULL;
-  $user_ID = NULL;
-  $showfields = 1;
-}
+
 
 $title = "Special Offer! Personal Psychic Reading! "; 
 $title2 = "YOU UNLOCKED A SPECIAL SERVICE!";
@@ -156,8 +148,13 @@ $avgrating = $avg;
                                 feel-goodisms.<br>
                                 <br>
                                 Instead, be prepared for adversity, which by conquering or overcoming it, can help you
-                                rise up to becoming a better person.<br>
+                                rise up to becoming a better person.<br><br>
+                                By purchasing this you will receive your own personal psychic reading which is split into 4 categories: general, health, career and love reading.
                             </div>
+
+                            <p style="letter-spacing: -0.25px;font-size: 16px;line-height: 1.2;margin-top: 20px;margin-bottom:20px;text-align:center;">
+									<span style="color: #09c100;font-weight:700;">$</span> Get a 60 day money back guarantee if you aren't satisfied.
+								</p>
 
                             <?php include $_SERVER['DOCUMENT_ROOT'].'/templates/rating/rating-upsell.php'; ?>
                         </div>
