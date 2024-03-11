@@ -75,7 +75,9 @@ if($formDate == "US"){
   $validDob = "validDOB";
 }
 $customJS = <<<EOT
-
+<!-- Begin of Digistore24 Trusted Badge Code -->
+<script type="text/javascript" src="https://www.digistore24.com/trusted-badge/31114/8VFurRVFl9tYlfi/thankyoupage"></script>
+<!-- End of Digistore24 Trusted Badge Code -->
 <script>
 $("#userName, #userDobUS, #userDob, #userEmail, #SelectGender, #SelectPGender").on("change keyup paste", function(){
   $('#SaveChanges').prop('disabled', false);
