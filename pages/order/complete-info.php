@@ -227,6 +227,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
                         <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     <?php } ?>
+                    <div class="alert alert-warning border-2 d-flex align-items-center mt-2" role="alert">
+      <p class="mb-0 flex-1">Please note that your Purchase Will Be Reflected as "Digistore24"</p>
+      </div>
                     <div class="card mb-3">
                         <div class="card-header bg-light topbar-gradient <?php if($DBsaved == 0){ ?>p-4<?php }else{ ?>p-3<?php }?>"
                             style="text-align:center;">
