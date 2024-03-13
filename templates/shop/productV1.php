@@ -585,12 +585,8 @@ $i = 0;
                 </div>
                          
                     </div>
-                    <div style="display:none;" class="privacy-message alert alert-info">ClickBank is the retailer of this product. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank’s role as retailer does not constitute an endorsement, approval or review of this product or any claim, statement or opinion used in promotion of this product.
-
-Statements on this website have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using our products.
-
-Testimonials, case studies, and examples found on this page are results that have been forwarded to us by users of "<?php echo $title; ?>" products and related products are not intended to represent or guarantee that anyone will achieve the same or similar results.
-</div>
+                    <div class="privacy-message alert alert-info">You are fully protected by our 100% Satisfaction-Guaranteee. So for that reason, I'll give you 60 days money back guarantee. If for any reason, or no reason at all, you're not 100% satisfied with what's inside, simply send me an email and I'll refund every penny of your order cost.</div>
+     
         </div>
        
     </div>
