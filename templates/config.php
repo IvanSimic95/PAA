@@ -117,6 +117,8 @@ $pimage = $webLogo;
 $sendFBAPI = 0;
 $pixelActive = 0;
 
+$push = 0;
+
 if(isset($_SERVER['HTTP_USER_AGENT'])){
   $userAgent = $_SERVER['HTTP_USER_AGENT'];
 }else{
