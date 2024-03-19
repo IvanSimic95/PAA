@@ -115,7 +115,7 @@ $sdescription = $webDescription;
 $pimage = $webLogo;
 
 $sendFBAPI = 0;
-$pixelActive = 0;
+$pixelActive = 1;
 
 $push = 0;
 
