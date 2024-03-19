@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     z-index:6666!important;
 }
 #main-nav{
-    top:100px!important;
+    top:95px!important;
 }
 </style>
 
