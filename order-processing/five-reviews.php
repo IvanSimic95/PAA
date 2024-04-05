@@ -14,7 +14,7 @@ if($domain == "paa.test"){
 	$username = "psychicartist_user";
 	$password = "Jepang123Iva";
 	$db = "psychicartist_db";
-  $base_url = "https://psychic-artist.com";
+  $base_url = "https://soulmate-drawing.com";
 }
 
 

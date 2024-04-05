@@ -486,22 +486,22 @@ echo "Starting complete-orders.php...<br><br>";
 
 		switch ($orderProductCode) {
 			case "soulmate":
-				$emailImage = "https://psychic-artist.com/assets/img/products/soulmate/1new6.jpg";
+				$emailImage = "https://soulmate-drawing.com/assets/img/products/soulmate/1new6.jpg";
 				$emailProdTitle = "Soulmate Drawing & Reading";
 			break;
 		
 			case "personal":
-			  $emailImage = "https://psychic-artist.com/assets/img/psychic.jpg";
+			  $emailImage = "https://soulmate-drawing.com/assets/img/psychic.jpg";
 			  $emailProdTitle = "Personal Reading";
 			break;
 		
 			case "future-baby":
-				$emailImage = "https://psychic-artist.com/assets/img/baby.jpg";
+				$emailImage = "https://soulmate-drawing.com/assets/img/baby.jpg";
 				$emailProdTitle = "Future Baby Drawing & Reading";
 			break;
 		
 			default:
-			$emailImage = "https://psychic-artist.com/assets/img/products/soulmate/1new6.jpg";
+			$emailImage = "https://soulmate-drawing.com/assets/img/products/soulmate/1new6.jpg";
 			$emailProdTitle = "Soulmate Drawing & Reading";
 		  }
 		  $messageComplete = "Your order is now complete, to access full reading please login to website by clicking button below!";
@@ -510,8 +510,8 @@ echo "Starting complete-orders.php...<br><br>";
 		// Now, compose and send your message.
 		// $mg->messages()->send($domain, $params);
 		/*
-		$mg->messages()->send('notification.psychic-artist.com', [
-		  'from'    => 'Psychic Empress <noreply@notification.psychic-artist.com>',
+		$mg->messages()->send('notification.soulmate-drawing.com', [
+		  'from'    => 'Psychic Empress <noreply@notification.soulmate-drawing.com>',
 		  'to'      => $orderEmail,
 		  'subject' => 'Order Complete!',
 		  'text'    => 'Your Order is now complete!',

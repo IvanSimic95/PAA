@@ -322,30 +322,30 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
 
  switch ($orderProductCode) {
 	case "soulmate":
-		$emailImage = "https://psychic-artist.com/assets/img/products/soulmate/1new6.jpg";
+		$emailImage = "https://soulmate-drawing.com/assets/img/products/soulmate/1new6.jpg";
 		$emailProdTitle = "Soulmate Drawing & Reading";
 	break;
 
 	case "personal":
-	  $emailImage = "https://psychic-artist.com/assets/img/psychic.jpg";
+	  $emailImage = "https://soulmate-drawing.com/assets/img/psychic.jpg";
 	  $emailProdTitle = "Personal Reading";
 	break;
 
 	case "future-baby":
-		$emailImage = "https://psychic-artist.com/assets/img/baby.jpg";
+		$emailImage = "https://soulmate-drawing.com/assets/img/baby.jpg";
 		$emailProdTitle = "Future Baby Drawing & Reading";
 	break;
 
 	default:
-	$emailImage = "https://psychic-artist.com/assets/img/products/soulmate/1new6.jpg";
+	$emailImage = "https://soulmate-drawing.com/assets/img/products/soulmate/1new6.jpg";
 	$emailProdTitle = "Soulmate Drawing & Reading";
   }
 
 $mg = Mailgun::create($mgkey, 'https://api.eu.mailgun.net'); // For EU servers
 
 
-$mg->messages()->send('email.psychic-artist.com', [
-  'from'    => 'Psychic Artist <noreply@psychic-artist.com>',
+$mg->messages()->send('email.soulmate-drawing.com', [
+  'from'    => 'Psychic Artist <noreply@soulmate-drawing.com>',
   'to'      => $orderEmail,
   'subject' => 'Payment Confirmed!',
   'text'    => 'Your Order is now Processing!',
@@ -356,7 +356,7 @@ $mg->messages()->send('email.psychic-artist.com', [
 
 /*
 			$email = new Mail();
-			$email->setFrom("contact@psychic-artist.com", "Psychic Empress");
+			$email->setFrom("contact@soulmate-drawing.com", "Psychic Empress");
 			$email->setSubject("Payment Confirmed!");
 			$email->addTo(
 				$orderEmail,

@@ -70,10 +70,10 @@ if($domain == "paa.test"){
   $base_url = "https://paa.test";
 }else{
 	$servername = "localhost";
-	$username = "psychicartist_user";
+	$username = "soulmatedrawing_user";
 	$password = "Jepang123Iva";
-	$db = "psychicartist_db";
-  $base_url = "https://psychic-artist.com";
+	$db = "soulmatedrawing_db";
+  $base_url = "https://soulmate-drawing.com";
 }
 
 
@@ -115,7 +115,9 @@ $sdescription = $webDescription;
 $pimage = $webLogo;
 
 $sendFBAPI = 0;
-$pixelActive = 1;
+$pixelActive = 0;
+$FBPixelID = 0;
+
 
 $push = 0;
 
