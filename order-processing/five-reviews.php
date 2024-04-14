@@ -11,9 +11,9 @@ if($domain == "paa.test"){
   $base_url = "https://paa.test";
 }else{
 	$servername = "localhost";
-	$username = "psychicartist_user";
+	$username = "soulmatedrawing_user";
 	$password = "Jepang123Iva";
-	$db = "psychicartist_db";
+	$db = "soulmatedrawing_db";
   $base_url = "https://soulmate-drawing.com";
 }
 
