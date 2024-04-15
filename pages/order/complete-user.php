@@ -3,7 +3,7 @@
 $showError = 0;
 $dashboardRedirect = $errorDisplay = $showError = $showErrorText = "";
 $DBsaved = 0;
-$title = "Order complete! | Psychic Artist"; 
+$title = "Order complete! | Soulmate Drawing"; 
 $sdescription = "You can now proceed to your user dashboard by clicking the button below!";
 $galert = "Your Orders have been Created!";
 

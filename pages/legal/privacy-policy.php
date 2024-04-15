@@ -1,5 +1,5 @@
 <?php
-$title = "Privacy Policy | Psychic Artist";
+$title = "Privacy Policy | Soulmate Drawing";
 $sdescription = "A privacy policy is a legal document that discloses some or all of the ways a party gathers, uses, discloses, and manages a customer or client's data.";
 ?>
 <div class="container-fluid" data-layout="container" style="padding:0!important;padding-top:20px!important;">

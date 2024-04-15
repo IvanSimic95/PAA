@@ -1,5 +1,5 @@
 <?php
-$title = "Facebook Policy | Psychic Artist";
+$title = "Facebook Policy | Soulmate Drawing";
 $sdescription = "As required by Facebook’s Privacy Policy we have to let you know that we do not sell your data!";
 ?>
 <div class="container-fluid" data-layout="container" style="padding:0!important;padding-top:20px!important;">

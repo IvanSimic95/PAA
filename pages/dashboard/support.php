@@ -2,7 +2,7 @@
 
 header("Location: /support/contact");
 die();
-$title = "Dashboard - Support | Psychic Artist"; 
+$title = "Dashboard - Support | Soulmate Drawing"; 
 $insertPage = "support";
 $pageTitle1 = "Support Chat";
 $sdescription = "Need help? This is the best place for you!";

@@ -1,5 +1,5 @@
 <?php
-$title = "Home | Psychic Artist";
+$title = "Home | Soulmate Drawing";
 
 ?>
 <style>

@@ -3,7 +3,7 @@ if(!isset($_SESSION['loggedIn'])){
 header("Location: /dashboard");
 die();
 }
-$title = "Dashboard - Profile | Psychic Artist"; 
+$title = "Dashboard - Profile | Soulmate Drawing"; 
 $insertPage = "profile";
 $pageTitle1 = "Edit Profile";
 $sdescription = "Manage & Edit your user profile";

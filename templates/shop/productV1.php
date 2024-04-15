@@ -10,7 +10,7 @@ $row = $result->fetch_array(MYSQLI_NUM);
 
 $title = $row[1];
 $titleProduct = $title;
-$title = $title." | Psychic Artist";
+$title = $title." | Soulmate Drawing";
 
 $shorttitle = $row[2];
 $codename = $row[3];

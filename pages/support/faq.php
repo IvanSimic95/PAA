@@ -1,5 +1,5 @@
 <?php
-$title = "FAQ - Support | Psychic Artist";
+$title = "FAQ - Support | Soulmate Drawing";
 $sdescription = "FAQ Description";
 
 //SQL Query for fetching FAQ from Database

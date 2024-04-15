@@ -1,5 +1,5 @@
 <?php
-$title = "Contact - Support | Psychic Artist";
+$title = "Contact - Support | Soulmate Drawing";
 $sdescription = "Contact Us so we can help you!";
 
 
