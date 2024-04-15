@@ -115,8 +115,8 @@ $sdescription = $webDescription;
 $pimage = $webLogo;
 
 $sendFBAPI = 0;
-$pixelActive = 0;
-$FBPixelID = 0;
+$pixelActive = 1;
+$FBPixelID = "1753249095084159";
 
 
 $push = 0;
