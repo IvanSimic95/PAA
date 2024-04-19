@@ -14,6 +14,80 @@ include $_SERVER['DOCUMENT_ROOT'] . '/templates/rating/rating-total.php';
 
 $reviews = $count;
 $avgrating = $avg;
+
+
+
+if(isset($_GET['c'])){
+  $ord = $_GET['c'];
+  $order_ID = $ord;
+  $sql = "SELECT * FROM `orders` WHERE `order_id` = '$ord' ORDER BY `order_id` DESC LIMIT 1";
+  $result = $conn->query($sql);
+  $count = $result->num_rows;
+  $row = $result->fetch_assoc();
+  
+  //If order is found input data from BG and update status to paid
+  if($result->num_rows != 0) {
+  
+  $_SESSION['lastorder'] = $_GET['c'];
+  $_SESSION['orderFName'] = $row['first_name'];
+  $_SESSION['orderLName'] = $row['last_name'];
+  $_SESSION['orderBirthday'] = $row['birthday'];
+  $_SESSION['orderAge'] = $row['user_age'];
+  $_SESSION['orderGender'] = $row['user_sex'];
+  $_SESSION['orderPartnerGender'] = $row['pick_sex'];
+  $_SESSION['BGEmail'] = $row['order_email'];
+  
+  $_SESSION['fbfirepixel'] = 1;
+  $_SESSION['fborderID'] = $_GET['c'];
+  $_SESSION['fborderPrice'] = $row['order_price'];
+  $_SESSION['fbproduct'] = $row['order_product'];
+
+  $_SESSION['fbSource'] = $row['fbSource'];
+
+
+    $FBPixel = $FBPixel1;
+  
+  
+  }
+  
+  
+  
+  
+}else{
+
+if(isset($_SESSION['lastorder'])){
+$lastOrderID = $_SESSION['lastorder'];
+$sql = "SELECT * FROM `orders` WHERE `order_id` = '$lastOrderID' ORDER BY `order_id` DESC LIMIT 1";
+$result = $conn->query($sql);
+$count = $result->num_rows;
+$row = $result->fetch_assoc();
+
+//If order is found input data from BG and update status to paid
+if($result->num_rows != 0) {
+
+
+$_SESSION['lastorder'] = $_GET['c'];
+$_SESSION['orderFName'] = $row['first_name'];
+$_SESSION['orderLName'] = $row['last_name'];
+$_SESSION['orderBirthday'] = $row['birthday'];
+$_SESSION['orderAge'] = $row['user_age'];
+$_SESSION['orderGender'] = $row['gender'];
+$_SESSION['orderPartnerGender'] = $row['partner_gender'];
+$_SESSION['BGEmail'] = $row['order_email'];
+
+$_SESSION['fbfirepixel'] = 1;
+$_SESSION['fborderID'] = $lastOrderID;
+$_SESSION['fborderPrice'] = $row['order_price'];
+$_SESSION['fbproduct'] = $row['order_product'];
+
+
+  $FBPixel = $FBPixel1;
+
+}
+}
+ 
+}
+$FirePixel = $_SESSION['fbfirepixel'];
 ?>
 <style>
 #topbar-sticky, #main-nav{
@@ -129,4 +203,44 @@ $(document).ready(function(){
 });
     </script>
 EOT;
+?>
+
+<?php
+
+if($FirePixel == 1){
+  $orderID = $_SESSION['fborderID']; 
+  $orderPrice = $_SESSION['fborderPrice'];
+  $product = $_SESSION['fbproduct'];
+
+$FBPurchasePixel = <<<EOT
+
+<script>
+fbq('init', '$FBPixel');
+fbq('track', 'Purchase', {
+  value: $orderPrice , 
+  currency: 'USD',
+  content_type: 'product', 
+  content_ids: '$product'
+}, 
+{eventID: '$orderID'});
+</script>
+
+<!-- Twitter conversion tracking event code -->
+<script type="text/javascript">
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+  // Insert Twitter Event ID
+  twq('event', 'tw-ojcyv-ojcyw', {
+    value: $orderPrice, // use this to pass the value of the conversion (e.g. 5.00)
+    conversion_id: '$orderID' // use this to pass a unique ID for the conversion event for deduplication (e.g. order id '1a2b3c')
+  });
+</script>
+<!-- End Twitter conversion tracking event code -->
+
+EOT;
+echo $FBPurchasePixel;
+$_SESSION['fbfirepixel'] = 0;
+}
+
 ?>
