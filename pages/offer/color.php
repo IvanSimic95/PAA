@@ -42,10 +42,8 @@ if(isset($_GET['c'])){
   $_SESSION['fborderPrice'] = $row['order_price'];
   $_SESSION['fbproduct'] = $row['order_product'];
 
-  $_SESSION['fbSource'] = $row['fbSource'];
 
-
-    $FBPixel = $FBPixel1;
+    $FBPixel = $FBPixelID;
   
   
   }
