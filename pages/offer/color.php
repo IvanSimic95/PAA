@@ -184,61 +184,32 @@ $FirePixel = $_SESSION['fbfirepixel'];
 <?php
 $customCSSPreload = '<link rel="preload" href="/assets/css/baby.css" as="style">';
 $customCSS = '<link href="/assets/css/baby.css" rel="stylesheet">';
-$customJS = <<<EOT
-
-<script src="https://www.digistore24.com/service/digistore.js"></script><script>digistoreUpsell()</script>
-<script src="/assets/js/infinite-ajax-scroll.min.js"></script>
-<script>
-$(document).ready(function(){
- let ias = new InfiniteAjaxScroll('.contents', {
-            item: '.item',
-            next: '.next',
-            pagination: '.pagination',
-            trigger: '.load-more',
-            logger: false
- });
-
-});
-    </script>
-EOT;
-?>
-
-<?php
-
-if($FirePixel == 1){
-  $orderID = $_SESSION['fborderID']; 
-  $orderPrice = $_SESSION['fborderPrice'];
-  $product = $_SESSION['fbproduct'];
+$orderID = $_SESSION['fborderID']; 
+$orderPrice = $_SESSION['fborderPrice'];
+$product = $_SESSION['fbproduct'];
 
 $FBPurchasePixel = <<<EOT
 
 <script>
 fbq('init', '$FBPixel');
 fbq('track', 'Purchase', {
-  value: $orderPrice , 
-  currency: 'USD',
-  content_type: 'product', 
-  content_ids: '$product'
+value: $orderPrice , 
+currency: 'USD',
+content_type: 'product', 
+content_ids: '$product'
 }, 
 {eventID: '$orderID'});
 </script>
-
-<!-- Twitter conversion tracking event code -->
-<script type="text/javascript">
-!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
-a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-  // Insert Twitter Event ID
-  twq('event', 'tw-ojcyv-ojcyw', {
-    value: $orderPrice, // use this to pass the value of the conversion (e.g. 5.00)
-    conversion_id: '$orderID' // use this to pass a unique ID for the conversion event for deduplication (e.g. order id '1a2b3c')
-  });
-</script>
-<!-- End Twitter conversion tracking event code -->
-
 EOT;
-echo $FBPurchasePixel;
-$_SESSION['fbfirepixel'] = 0;
-}
+
+$customJS = <<<EOT
+
+<script src="https://www.digistore24.com/service/digistore.js"></script><script>digistoreUpsell()</script>
+
+    $FBPurchasePixel
+EOT;
+?>
+
+<?php
 
 ?>
