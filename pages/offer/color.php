@@ -191,7 +191,6 @@ $product = $_SESSION['fbproduct'];
 $FBPurchasePixel = <<<EOT
 
 <script>
-fbq('init', '$FBPixel');
 fbq('track', 'Purchase', {
 value: $orderPrice , 
 currency: 'USD',
