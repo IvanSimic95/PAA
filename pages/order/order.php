@@ -120,16 +120,70 @@ if($testError == TRUE){ //IF there was error recoreded fetching main variables s
     case "2":
     $product = "twinflame";
     $order_product_nice = "Twin Flame Drawing & Reading";
+
+    switch ($order_priority){
+        case "48":
+        $cbproduct = "548549";
+        $order_price = "29.99";
+        break;
+    
+        case "24":
+        $cbproduct = "548606";
+        $order_price = "39.99";
+        break;
+    
+        case "12":
+        $cbproduct = "548820";
+        $order_price = "49.99";
+        break;
+    }
+
     break;
     
     case "3":
     $product = "futurespouse";
     $order_product_nice = "Future Spouse Drawing & Reading";
+
+    switch ($order_priority){
+        case "48":
+        $cbproduct = "548821";
+        $order_price = "29.99";
+        break;
+    
+        case "24":
+        $cbproduct = "548822";
+        $order_price = "39.99";
+        break;
+    
+        case "12":
+        $cbproduct = "548823";
+        $order_price = "49.99";
+        break;
+    }
     break;
+
+
     
     case "4":
     $product = "past";
     $order_product_nice = "Past Life Drawing & Reading";
+
+    switch ($order_priority){
+        case "48":
+        $cbproduct = "549268";
+        $order_price = "29.99";
+        break;
+    
+        case "24":
+        $cbproduct = "549269";
+        $order_price = "39.99";
+        break;
+    
+        case "12":
+        $cbproduct = "549271";
+        $order_price = "49.99";
+        break;
+    }
     break;
     }
     $logArray['7'] = $order_product;
