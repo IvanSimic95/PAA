@@ -1,4 +1,4 @@
-<form id="normalproduct" class="form-order needs-validation display-block" name="order_form" action="/order/order" method="get">
+<form id="normalproduct" class="form-order needs-validation display-block" name="order_form" action="/order/order" method="post">
 
 
         <div class="form-floating form-floating-icon mb-2">
