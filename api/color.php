@@ -11,7 +11,6 @@ empty($errorDisplay) ?  $testError = FALSE : $testError = TRUE;
 if($testError == TRUE){
 echo $errorDisplay;
 }else{
-$name = $fname." ".$lname;
 
   //Find Correct Order
   $sql = "SELECT * FROM `orders` WHERE `order_id` = '$orderID' ORDER BY  `order_id` DESC LIMIT 1";
