@@ -336,6 +336,41 @@ else { ?>
             </div>
         
         <!-- PRODUCT END -->
+
+ <!-- INFO START -->
+ <div class="card mb-3 p-0 section" id="highlights">
+        <div class="card-header bg-light py-3 px-4 topbar-gradient text-white">
+                <div class="d-flex flex-between-center">
+                    <h3 class="mb-0 fw-semibold fs-1 text-white "> What makes us special? </h3>
+                </div>
+            </div>
+            <div class="card-body px-3 px-md-4 px-lg-4 py-3">
+            
+            <div class="row justify-content-center mt-4">
+            <h2>PSYCHIC DRAWING OF YOUR SOULMATE</h2>
+						<br> <p style="color:#d9480d;text-align:center;"><b>💕 Dear Beautiful Soul, 💕</b></p>
+ <p>Are you weary of the relentless pursuit of love? Longing for a connection that speaks to your soul and a companion that’s truly destined for you?    </p> 
+ <p>  I am The Soulmate Healer, and I’m here to unveil the mysteries of your heart, to guide you to a love that’s beyond imagination, a love that’s exclusively yours. </p> 
+<br><p style="color:#d9480d;text-align:center;"><b> 🌟 What is a Soulmate Drawing? 🌟 </b> </p>
+ <p> A Soulmate Drawing is your personal gateway to the future. It’s not just a portrait; it’s the revelation of your destined companion, combined with my psychic insights and artistic talents to bring you closer to your destined love. It's a mirror reflecting the true essence of your heart and the person who’s bound to complete you.  </p> 
+ <br><p style="color:#d9480d;text-align:center;"> 🌷 Feel Seen, Feel Understood… 🌷 </p>
+<p>  Ever feel alone in a crowd, like no one really gets you? You laugh, you talk, but inside, you're asking, “Where’s the one who really sees me? Who gets the real me?” We all want someone who knows our story, who understands our silence, who makes us feel we belong.</p> 
+<p>Imagine finally meeting someone who gets your jokes, who knows your favorite songs, who can make you smile just by being there. Imagine having a buddy, a pal, someone to share your dreams and your worries with. Someone who knows you, the real you, and loves you because of it, not in spite of it.  </p> 
+<p>  This isn’t just about finding love. It’s about finding your other half, your true buddy, who makes you feel whole, understood, and truly at home. It’s about feeling seen, feeling loved, for who you really are.</p> 
+<p> I’m here to help you find this friend, this <b> soulmate</b>. I’ll draw them for you, and I’ll tell you how you’ll meet them. Your soulmate isn’t just someone to love; they’re your best friend, your partner in crime, your shoulder to lean on. So, are you ready to meet the one who’ll dance through life with you, laughing all the way? </p> 
+
+ <br><p style="color:#d9480d;text-align:center;"><b> 💖 Your Journey to Self-Discovery… 💖 </b></p>
+ <p> Meet not just a partner, but a soul who will guide you towards profound self-discovery and deeper understanding. This transformative encounter is your opportunity to bloom and to experience emotional and spiritual growth like never before.  </p> 
+ <br><p style="color:#d9480d;text-align:center;"><b> 💖 Your Happiness, Guaranteed! 💖 </b>  </p>
+ <p>  Your happiness is my mission! If your soulmate drawing doesn’t bring you the joy and clarity you hoped for, just reach out. I’ll refund every penny immediately, no questions, no hassle! It’s all about your peace of mind and heartfelt satisfaction! </p> 
+                         
+                    </div>
+        </div>
+      
+    </div>
+        <!--  INFO END -->
+
+
   <!-- HIGHLIGHTS START -->
   <div class="card mb-3 p-0 section" id="highlights">
         <div class="card-header bg-light py-3 px-4 topbar-gradient text-white">
