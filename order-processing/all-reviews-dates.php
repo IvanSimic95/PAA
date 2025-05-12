@@ -12,7 +12,7 @@ if($domain == "pa.test"){
 	$username = "psychic_newpanel";
 	$password = "Jepang123Iva";
 	$db = "psychic_newpanel";
-  $base_url = "https://soulmate-drawing.com";
+  $base_url = "https://psychic-artist.com";
 }
 
 // Create connection

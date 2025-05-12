@@ -51,7 +51,7 @@ $order_buygoods = $obj->receipt;
 $mOrderID = $obj->vendorVariables->order_ID;
 $userID = $obj->vendorVariables->user_ID;
 $cName = $obj->customer->billing->fullName;
-$productImage = "https://soulmate-drawing.com/assets/img/products/soulmate/1.jpg";
+$productImage = "https://psychic-artist.com/assets/img/products/soulmate/1.jpg";
 $productFullTitle = $obj->lineItems[0]->productTitle;
 
 $zip = $obj->customer->billing->address->postalCode;
@@ -64,7 +64,7 @@ if(isset($obj->vendorVariables->email)){
 }
 
 $orderID = $mOrderID;
-$domain  = "https://soulmate-drawing.com";
+$domain  = "https://psychic-artist.com";
 
 
 

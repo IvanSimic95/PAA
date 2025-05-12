@@ -1,4 +1,4 @@
 <?php
-header("Location: https://soulmate-drawing.com/legal/privacy-policy");
+header("Location: https://psychic-artist.com/legal/privacy-policy");
 die();
 ?>

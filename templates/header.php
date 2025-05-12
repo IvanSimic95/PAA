@@ -55,7 +55,7 @@
     <link href="/assets/css/review.css" rel="stylesheet">
     <link href="/assets/css/custom.css?v=1204" rel="stylesheet">
    
-<!-- Hotjar Tracking Code for https://soulmate-drawing.com/ -->
+<!-- Hotjar Tracking Code for https://psychic-artist.com/ -->
   <script>
     (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};

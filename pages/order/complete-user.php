@@ -45,7 +45,7 @@ $galert = "Your Orders have been Created!";
       </div>
 
       <div class="alert alert-info border-2 d-flex align-items-center mt-2" role="alert">
-      <p class="mb-0 flex-1">If you need help contact us at contact@soulmate-drawing.com</p>
+      <p class="mb-0 flex-1">If you need help contact us at contact@psychic-artist.com</p>
       </div>
 
       <div class="alert alert-warning border-2 d-flex align-items-center mt-2" role="alert">
